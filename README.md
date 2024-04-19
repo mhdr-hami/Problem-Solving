@@ -6,7 +6,7 @@ My name is Mohammadreza, and in this repository, I will do my best to explain my
 I suggest spending ***at least one hour*** :hourglass: trying to solve the problem yourself before checking out my editorial if you're unable to solve it. Doing so will help you understand better and improve your problem-solving skills after each attempt :chart_with_upwards_trend:.
 
 ***
-___
+
 
 # Table of contents :page_facing_up:
 1. [LeetCode_TwoSum](#LeetCode_TwoSum)
