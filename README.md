@@ -10,7 +10,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 # Table of contents :page_facing_up:
 1. [LeetCode: Two Sum](#twosum)
-2. [LeetCode: Best Time to Buy and Sell Stock](#BestTimetoBuyandSellStock)
+2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="twosum"></a>
 
@@ -30,7 +30,7 @@ This is how you dropdown.
 
 ***
 
-## 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="BestTimetoBuyandSellStock"></a>
+## 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
 
 #### Description
 
