@@ -14,7 +14,7 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
-## 1. LeetCode: Two Sum Problem <a name="LeetCode_TwoSum"></a>
+## 1. LeetCode: Two Sum Problem [Link](https://leetcode.com/problems/two-sum/ "Two Sum in LeetCode") <a name="LeetCode_TwoSum"></a>
 
 #### Description
 > Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
