@@ -9,9 +9,9 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
 
 
 # Table of contents :page_facing_up:
-1. [LeetCode_Two Sum](#LeetCode_TwoSum)
-2. [LeetCode_BestTimetoBuyandSellStock](#BestTimetoBuyandSellStock)
-3. [LeetCode_ContainsDuplicate](#ContainsDuplicate)
+1. [LeetCode: Two Sum](#LeetCode_TwoSum)
+2. [LeetCode: Best Time to Buy and Sell Stock](#BestTimetoBuyandSellStock)
+3. [LeetCode: Contains Duplicate](#ContainsDuplicate)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "Two Sum in LeetCode") <a name="LeetCode_TwoSum"></a>
 
