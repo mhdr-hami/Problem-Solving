@@ -40,7 +40,7 @@ This is how you dropdown.
 
 > Example 1: <br> Input: prices = [7,1,5,3,6,4] <br> Output: 5 <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: prices = [7,6,4,3,1] <br> Output: 0 <br> Explanation: In this case, no transactions are done and the max profit = 0.
  
-> Constraints: <br> 1 <= `prices.length` <= 10<sup>5</sup> <br> 0 <= `prices[i]` <= 10<sup>4</sup> <br>
+> Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
 
 <details>
 <summary>Editorial</summary>
