@@ -1,5 +1,5 @@
 ## my Problem Solving Submissions Editorial ##
-Hello there! :smiley: If you're searching for a place to learn and not just find answers, then I have great news for you - you've come to the right place :sparkles:! 
+Hello there! :smiley: If you're searching for a place to learn how to solve problems and not just find the answers, then I have great news for you - you've come to the right place :sparkles:! 
 
 My name is Mohammadreza, and in this repository, I will do my best to explain my LeetCode submissions. I'll share my thought process :thought_balloon: as I tackle a problem, and I'll help you follow the same procedure for similar questions. 
 
