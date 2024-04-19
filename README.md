@@ -8,7 +8,7 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
 ***
 ***
 
-# Table of contents
+# Table of contents :page_facing_up:
 1. [LeetCode_TwoSum](#LeetCode_TwoSum)
 2. [Some paragraph](#paragraph1)
     1. [Sub paragraph](#subparagraph1)
