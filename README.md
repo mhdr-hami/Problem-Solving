@@ -1,4 +1,4 @@
-## my LeetCode Submissions Editorial ##
+## my Problem Solving Submissions Editorial ##
 Hello there! :smiley: If you're searching for a place to learn and not just find answers, then I have great news for you - you've come to the right place :sparkles:! 
 
 My name is Mohammadreza, and in this repository, I will do my best to explain my LeetCode submissions. I'll share my thought process :thought_balloon: as I tackle a problem, and I'll help you follow the same procedure for similar questions. 
@@ -10,9 +10,8 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
 
 # Table of contents :page_facing_up:
 1. [LeetCode_TwoSum](#LeetCode_TwoSum)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
+2. [LeetCode_BestTimetoBuyandSellStock](#BestTimetoBuyandSellStock)
+3. [LeetCode_ContainsDuplicate](#ContainsDuplicate)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "Two Sum in LeetCode") <a name="LeetCode_TwoSum"></a>
 
