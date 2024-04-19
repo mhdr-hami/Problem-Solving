@@ -42,9 +42,15 @@ Example 3:
 Input: nums = [3,3], target = 6
 
 Output: [0,1]
+
 ---
+
 #### Editorial
+
 something something
+
+***
+
 ## Some paragraph <a name="paragraph1"></a>
 The first paragraph text
 
