@@ -9,7 +9,7 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
 
 
 # Table of contents :page_facing_up:
-1. [LeetCode_TwoSum](#LeetCode_TwoSum)
+1. [LeetCode_Two Sum](#LeetCode_TwoSum)
 2. [LeetCode_BestTimetoBuyandSellStock](#BestTimetoBuyandSellStock)
 3. [LeetCode_ContainsDuplicate](#ContainsDuplicate)
 
