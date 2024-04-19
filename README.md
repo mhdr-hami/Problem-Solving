@@ -11,7 +11,6 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 # Table of contents :page_facing_up:
 1. [LeetCode: Two Sum](#TwoSum)
 2. [LeetCode: Best Time to Buy and Sell Stock](#BestTimetoBuyandSellStock)
-3. [LeetCode: Contains Duplicate](#ContainsDuplicate)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="TwoSum"></a>
 
@@ -49,7 +48,3 @@ This is how you dropdown.
 </details>
 
 ***
-
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
