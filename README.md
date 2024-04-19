@@ -14,7 +14,7 @@ I suggest spending ***at least one hour*** :hourglass: trying to solve the probl
     1. [Sub paragraph](#subparagraph1)
 3. [Another paragraph](#paragraph2)
 
-## LeetCode: Two Sum Problem <a name="LeetCode_TwoSum"></a>
+## 1. LeetCode: Two Sum Problem <a name="LeetCode_TwoSum"></a>
 Some introduction text, formatted in heading 2 style
 Some introduction text, formatted in heading 2 style
 Some introduction text, formatted in heading 2 style
