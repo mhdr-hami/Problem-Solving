@@ -9,7 +9,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 
 # Table of contents :page_facing_up:
-1. [LeetCode: Two Sum](#twosum) <details> <summary>Idea</summary> Two Pointers </details>
+1. [LeetCode: Two Sum](#twosum) <details> <summary>:dart:idea</summary> Two Pointers </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="twosum"></a>
