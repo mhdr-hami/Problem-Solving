@@ -9,10 +9,10 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 
 # Table of contents :page_facing_up:
-1. [LeetCode: Two Sum](#TwoSum)
+1. [LeetCode: Two Sum](#twosum)
 2. [LeetCode: Best Time to Buy and Sell Stock](#BestTimetoBuyandSellStock)
 
-## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="TwoSum"></a>
+## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="twosum"></a>
 
 #### Description
 
