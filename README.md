@@ -9,11 +9,11 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 
 # Table of contents :page_facing_up:
-1. [LeetCode: Two Sum](#LeetCode_TwoSum)
+1. [LeetCode: Two Sum](#TwoSum)
 2. [LeetCode: Best Time to Buy and Sell Stock](#BestTimetoBuyandSellStock)
 3. [LeetCode: Contains Duplicate](#ContainsDuplicate)
 
-## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "Two Sum in LeetCode") <a name="LeetCode_TwoSum"></a>
+## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="TwoSum"></a>
 
 #### Description
 
@@ -31,11 +31,38 @@ This is how you dropdown.
 
 ***
 
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
+## 2. LeetCode: Best Time to Buy and Sell Stock [[Link]]([https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="BestTimetoBuyandSellStock"></a>
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+#### Description
+
+> You are given an array `prices` where `prices[i]` is the price of a given stock on the i^th day.
+<br> You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. <br> Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return `0`.
+
+> Example 1:
+<br>
+Input: prices = [7,1,5,3,6,4] <br>
+Output: 5 <br>
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br>
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br>
+Example 2: <br>
+
+Input: prices = [7,6,4,3,1] <br>
+Output: 0 <br>
+Explanation: In this case, no transactions are done and the max profit = 0. <br>
+ 
+> Constraints: <br>
+
+1 <= prices.length <= 105 <br>
+0 <= prices[i] <= 104 <br>
+
+<details>
+<summary>Editorial</summary>
+<br>
+This is how you dropdown.
+</details>
+
+***
+
 
 ## Another paragraph <a name="paragraph2"></a>
 The second paragraph text
