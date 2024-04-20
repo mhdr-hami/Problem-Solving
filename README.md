@@ -1,4 +1,4 @@
-## My Problem Solving Submissions Editorial ##
+# My Problem Solving Submissions Editorial #
 Hello there! :smiley: If you're searching for a place to learn how to solve problems, and not just find the answers, then I have great news for you :sparkles: - you've come to the right place :books:! 
 
 My name is Mohammadreza, and in this repository, I will do my best to explain my LeetCode submissions. I'll share my thought process :thought_balloon: as I tackle a problem, and I'll help you follow the same procedure for similar questions. 
@@ -7,7 +7,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 ***
 
-#### My General Procedure for Problem Solving ####
+### My General Procedure for Problem Solving ###
 something something something
 
 ***
