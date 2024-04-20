@@ -7,9 +7,14 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 ***
 
+### my General Procedure for Problem Solving ###
+something something something
+
+***
+
 
 # Table of contents :page_facing_up:
-1. [LeetCode: Two Sum](#twosum) <details> <summary>:dart:idea</summary>  Two Pointers </details>
+1. [LeetCode: Two Sum](#twosum) <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
 
 ## 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="twosum"></a>
@@ -25,7 +30,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 <details>
 <summary>Editorial</summary>
 <br>
-This is how you dropdown.
+
 </details>
 
 ***
