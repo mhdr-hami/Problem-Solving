@@ -7,7 +7,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 ***
 
-## My General Procedure for Problem Solving :trollface:##
+## My General Procedure for Problem Solving :trollface: ##
 1. **DO NOT RUSH**:grey_exclamation: <br> It is important to read the problem description carefully and precisely, even when you are in a programming competition with a time limit. Rushing through the description can cause you to misunderstand the problem, and as a result, you may end up spending more time coding the wrong answer than it would take to figure out what the question really wants. Thus, taking your time to understand the problem is essential for success.
 2. **Remeber** the similar problem, **Remember** the idea.
 
