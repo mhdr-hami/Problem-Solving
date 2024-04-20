@@ -16,7 +16,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 
 
 ## Table of contents :page_facing_up:
-1. [LeetCode: Two Sum :large_blue_diamond:](#twosum) <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
+1. [LeetCode: Two Sum](#twosum) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
 
 ***
