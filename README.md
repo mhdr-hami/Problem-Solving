@@ -10,7 +10,7 @@ I suggest spending :hourglass: ***at least one hour*** :hourglass: trying to sol
 ## My General Procedure for Problem Solving :trollface: ##
 1. **DO NOT RUSH**:grey_exclamation: <br> It is important to read the problem description carefully and precisely, even when you are in a programming competition with a time limit. Rushing through the description can cause you to misunderstand the problem, and as a result, you may end up spending more time coding the wrong answer than it would take to figure out what the question really wants. Thus, taking your time to understand the problem is essential for success.
 2. **Remeber** the similar problem 💡 **Remember** the idea 💡 <br> This is the key step that helps you get the `Accepted`, and get better at problem-solving over time. After reading the problem description, start recalling similar questions you've solved before. Try to remember the idea you used to solve them and explain in one sentence why the current question requires a similar approach.
-3. Consider the Constraints. > Challenge Acce......pted.
+3. Challenge Acce......pted.
 ***
 
 
