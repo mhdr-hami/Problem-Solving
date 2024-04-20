@@ -17,7 +17,7 @@ something something something
 1. [LeetCode: Two Sum](#twosum) <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
 
-##
+***
 
 ### 1. LeetCode: Two Sum Problem [[Link]](https://leetcode.com/problems/two-sum/ "LeetCode Submission Link") <a name="twosum"></a>
 
@@ -35,7 +35,7 @@ something something something
 
 </details>
 
-***
+##
 
 ### 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
 
@@ -54,4 +54,4 @@ something something something
 This is how you dropdown.
 </details>
 
-***
+##
