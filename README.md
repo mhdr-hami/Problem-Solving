@@ -35,6 +35,8 @@ I hope that you find this repository helpful :white_check_mark:.
 
 > Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> + Only one valid answer exists. 
 
+![twopointer](https://drive.google.com/file/d/1RwvyYXnTG1xtWJd5VouVnPVak0YPkidp/view?usp=sharing "example")
+
 <details>
 <summary>Editorial</summary>
 
@@ -45,8 +47,6 @@ Following the `brute force` idea, it would be great if we didn't have to walk th
 <img src="https://drive.google.com/file/d/1RwvyYXnTG1xtWJd5VouVnPVak0YPkidp/view?usp=sharing" alt="MarineGEO circle logo" style="height: 1000px; width:1000px;"/>
 
 <img src="https://drive.google.com/drive/u/0/folders/1uOtmYIHwAnXpF2d6OyY5vCSrugClWlPG" alt="MarineGEO circle logo" style="height: 1000px; width:1000px;"/>
-
-![twopointer](https://drive.google.com/file/d/1RwvyYXnTG1xtWJd5VouVnPVak0YPkidp/view?usp=sharing "example")
 
 But, sorting an array of elements can be difficult if you also need to keep track of their indexes. However, there is a simple solution to this problem. If you require both sorting and index tracking, you can pair each element with its index and then sort the resultant array of pairs. 
 
