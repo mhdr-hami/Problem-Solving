@@ -35,9 +35,7 @@ I hope that you find this repository helpful :white_check_mark:.
 
 > Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> + Only one valid answer exists.
 
-<p style="text-align: right"> <img src="./Figures/FIGURE1.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/> </p>
-
-![Image Broken!]( "Two-Pointer Figure")
+<p style="text-align: right"><img src="./Figures/FIGURE1.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
 
 <details>
 <summary>Editorial</summary>
