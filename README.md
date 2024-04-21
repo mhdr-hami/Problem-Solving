@@ -42,7 +42,7 @@ It's natural to consider the approach of `brute force` when faced with this prob
 
 Following the `brute force` idea, it would be great if we didn't have to walk through the entire array for each element  $O(n^2)$ . What does it require to find the answer only in one pass over the array $O(n)$ ? This means we can only perform one comparison for each element. However, the challenge is to determine the right element to calculate their sum and check if it matches the `target`. If the array was sorted, we could use the two-pointer approach by having one pointer at the start and the other at the end of the array. By comparing their sum with the `target`, we could identify the next best pair to consider. For example, if their sum is less than the `target`, we would need to consider a pair with a larger sum, and by moving the pointer that points to the smaller element one step to the right, we can be sure that we have achieved the next larger sum available in the entire array.
 
-![Two-Pointer idea](https://drive.google.com/file/d/1RwvyYXnTG1xtWJd5VouVnPVak0YPkidp/view?usp=share_link)
+![Two-Pointer](https://drive.google.com/file/d/1RwvyYXnTG1xtWJd5VouVnPVak0YPkidp/view?usp=share_link)
 
 But, sorting an array of elements can be difficult if you also need to keep track of their indexes. However, there is a simple solution to this problem. If you require both sorting and index tracking, you can pair each element with its index and then sort the resultant array of pairs. 
 
