@@ -35,8 +35,7 @@ I hope that you find this repository helpful :white_check_mark:.
 
 > Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> + Only one valid answer exists. 
 
-![twopointer](https://mega.nz/file/UQlmDDqD#5OBL1VTng89yJiOpms9EQ_r7EYRtjC3tFhqq2k9RssI)
-![aa](https://mega.nz/file/UQlmDDqD#5OBL1VTng89yJiOpms9EQ_r7EYRtjC3tFhqq2k9RssI)
+[![Alt text](https://assets.digitalocean.com/articles/alligator/boo.svg)](https://digitalocean.com)
 
 <details>
 <summary>Editorial</summary>
