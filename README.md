@@ -35,10 +35,7 @@ I hope that you find this repository helpful :white_check_mark:.
 
 > Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> + Only one valid answer exists.
 
-<p style="text-align: right"><img src="./Figures/FIGURE1.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
-
-<details>
-<summary>Editorial</summary>
+###
 
 It's natural to consider the approach of `brute force` when faced with this problem. Since the input array is not sorted, we need to scan the entire array for each element to find the other element that makes up the target. As a result, the time complexity of this approach would be $O(n^2)$. As we move on to the third step of my general approach, it becomes clear that this approach is bound to result in a time-limit error. Additionally, we have to keep track of the indexes of elements, which means any operation that moves and swaps the elements is a challenge.
 
