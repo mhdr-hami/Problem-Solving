@@ -38,7 +38,7 @@ I hope that you find this repository helpful :white_check_mark:.
 <details>
 <summary>Editorial</summary>
 <br>
-
+Ofcourse the first idea that comes to mind, is `Brute force`. As the array is not sorted, for each element, we have to scan the whole array to find the other element that makes the `target`. So it would have a time complexity of $O(N^2)$.
 
 </details>
 
