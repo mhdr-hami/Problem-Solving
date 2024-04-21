@@ -33,9 +33,12 @@ I hope that you find this repository helpful :white_check_mark:.
 
 > Example 1: <br> Input: nums = [2,7,11,15], target = 9 <br> Output: [0,1] <br> Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]. <br> Example 2: <br> Input: nums = [3,2,4], target = 6 <br> Output: [1,2] <br> Example 3: <br> Input: nums = [3,3], target = 6 <br> Output: [0,1]
 
+> Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ nums[i] $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ target $\le$ 10<sup>9</sup> <br> Only one valid answer exists. 
+
 <details>
 <summary>Editorial</summary>
 <br>
+
 
 </details>
 
