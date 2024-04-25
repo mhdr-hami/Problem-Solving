@@ -19,7 +19,7 @@ I hope that you find this repository helpful :white_check_mark:.
 
 ## Table of contents :page_facing_up:
 1. [LeetCode: Two Sum](#twosum) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
-2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock)
+2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Optimization, One Traverse </details>
 
 ***
 
@@ -54,17 +54,17 @@ Although we need only $O(n)$ to traverse through the sorted array of pairs using
 
 #### Description
 
-> You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
+You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
 <br> You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. <br> Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return `0`.
 
-> Example 1: <br> Input: prices = [7,1,5,3,6,4] <br> Output: 5 <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: prices = [7,6,4,3,1] <br> Output: 0 <br> Explanation: In this case, no transactions are done and the max profit = 0.
+Example 1: <br> Input: prices = [7,1,5,3,6,4] <br> Output: 5 <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: prices = [7,6,4,3,1] <br> Output: 0 <br> Explanation: In this case, no transactions are done and the max profit = 0.
  
-> Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
+Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
 
-<details>
-<summary>Editorial</summary>
-<br>
-This is how you dropdown.
-</details>
+####
 
-##
+#### Editorial
+We use the label "Optimization" to refer to problems that require finding the maximum, minimum, best, most, or similar terms. As soon as you identify a problem as an optimization problem, the first solution that should come to your mind is to solve it by traversing the array once. Sometimes, additional ideas like "DP" may be required to solve the problem during this traverse. At other times, the problem may be simpler than you initially thought.
+
+This is an example of an easy problem, where all it takes to find the 
+
