@@ -21,6 +21,7 @@ I hope that you find this repository helpful :white_check_mark:.
 1. [LeetCode: Two Sum](#twosum) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Optimization, One Traverse </details>
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
+4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary>  Small Refinements </details>
 
 ***
 
@@ -102,3 +103,30 @@ This is one of the simplest problems I have encountered on LeetCode. However, I 
 If we sort the array ( $O(n\log \ n)$ ), all duplicate elements will become neighbors. Therefore, we can traverse the array once, and check if there exists an element that is equal to its neighbor. 
 
 There are alternative techniques, such as utilizing "set" or ..., that may speed up the code. However, what I aimed to grasp from this problem, was to extract the idea from the big O the problem says it's fine to use.
+
+##
+
+### 4. LeetCode: Product of Array Except Self [[Link]](https://leetcode.com/problems/product-of-array-except-self/ "LeetCode Submission Link") <a name="productofarrayexceptself"></a>
+
+#### Description
+
+Given an integer array  nums , return an array `answer` such that `answer[i]` is equal to the product of all the elements of nums except `nums[i]`. <br>
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. <br>
+You must write an algorithm that runs in O(n) time and without using the division operation.
+
+Example 1: <br>
+Input: nums = [1,2,3,4] <br>
+Output: [24,12,8,6] <br>
+Example 2: <br>
+Input: nums = [-1,1,0,-3,3] <br>
+Output: [0,0,9,0,0] <br>
+ 
+Constraints: <br>
+2 $\le$ `nums.length` $\le$ 10<sup>5</sup> <br>
+-30 $\le$ `nums[i]` $\le$ 30 <br>
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. <br>
+
+
+####
+
+#### Editorial
