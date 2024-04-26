@@ -9,7 +9,7 @@ I hope that you find this repository helpful :white_check_mark:.
 
 ***
 
-## My "General :trollface: " Procedure for Problem Solving ##
+## My "General Procedure :trollface: " for Problem Solving ##
 1. **DO NOT RUSH**:grey_exclamation: <br> It is important to read the problem description carefully and precisely, even when you are in a programming competition with a time limit. Rushing through the description can cause you to misunderstand the problem, and as a result, you may end up spending more time coding the wrong answer than it would take to figure out what the question really wants. Thus, taking your time to understand the problem is essential for success.
 2. **Remeber** the similar problem 💡 **Remember** the idea 💡 <br> This is the key step that helps you get the `Accepted`, and get better at problem-solving over time. After reading the problem description, start recalling similar questions you've solved before. Try to remember the idea you used to solve them and explain in one sentence why the current question requires a similar approach.
 3. Challenge Acce......pted :heavy_check_mark: <br> Consider the constraints given in the problem description. Check the time limit and memory limit. Make sure the combination of your idea and the constraints satisfies the limits. By this point, you must have figured out how exactly this problem challenges you and what is your approach to tackling it. Do not ignore this. Only by doing this, you can make sure you are ready to start coding.
@@ -66,7 +66,7 @@ Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `pri
 #### Editorial
 We use the label "Optimization" to refer to problems that require finding the maximum, minimum, best, most, or similar terms. As soon as you identify a problem as an optimization problem, the first solution that should come to your mind is to solve it by traversing the array once. Sometimes, additional ideas like "DP" may be required to solve the problem during this traverse. At other times, the problem may be simpler than you initially thought.
 
-This is an example of an easy problem where we need to find two elements from an array such that their difference is maximum. By traversing the array only once, we can find the minimum and maximum element of the array, which would result in the maximum difference. However, the order of these two elements matters. In fact, this is the only small challenge of this problem that the profit is calculated by subtracting the first element from the second one. 
+This is an example of an easy problem where we need to find two elements from an array such that their difference is maximum. However, the order of these two elements matters. In fact, this is the only small challenge of this problem that the profit is calculated by subtracting the element with smaller index from the second element. Otherwise, by traversing the array only once, we can find the minimum and maximum element of the array, which would result in the maximum difference. 
 
 To do this, as we traverse over the array, we must keep track of the minimum element seen so far, and calculate the global max profit as the maximum of itself and local profit which is the difference between the current element and the minimum element so far (which would be in the previous locations).
 
