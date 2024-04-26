@@ -70,3 +70,4 @@ This is an example of an easy problem where we need to find two elements from an
 
 To do this, as we traverse over the array, we must keep track of the minimum element seen so far, and calculate the global max profit as the maximum of itself and local profit which is the difference between the current element and the minimum element so far (which would be in the previous locations).
 
+##
