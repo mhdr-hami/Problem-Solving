@@ -20,6 +20,7 @@ I hope that you find this repository helpful :white_check_mark:.
 ## Table of contents :page_facing_up:
 1. [LeetCode: Two Sum](#twosum) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Two Pointers, Sort </details>
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Optimization, One Traverse </details>
+3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 
 ***
 
@@ -71,3 +72,27 @@ This is an example of an easy problem where we need to find two elements from an
 To do this, as we traverse over the array, we must keep track of the minimum element seen so far, and calculate the global max profit as the maximum of itself and local profit which is the difference between the current element and the minimum element so far (which would be in the previous locations).
 
 ##
+
+### 3. LeetCode: Contains Duplicate [[Link]](https://leetcode.com/problems/contains-duplicate/ "LeetCode Submission Link") <a name="containsduplicate"></a>
+
+#### Description
+
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+ 
+Example 1: <br>
+Input: nums = [1,2,3,1] <br>
+Output: true
+Example 2: 
+
+Input: nums = [1,2,3,4]
+Output: false
+Example 3:
+
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+ 
+
+Constraints:
+
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
