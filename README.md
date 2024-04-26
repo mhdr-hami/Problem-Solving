@@ -97,8 +97,8 @@ Constraints: <br>
 
 #### Editorial
 
-This is one of the simplest problems I have encountered on LeetCode. However, I wanted to include it in my repository because of the way I approached and solved it within 2 seconds. In many cases, you can arrive at the idea of solving a problem by considering the "big O" of the algorithm that would be accepted. For example, since the constraints allowed for $O(nlogn)$, I decided to use "Sort" as it is also $O(n\log  n)$. If a problem requires $O(log  n)$, then I would first consider "Binary Search" as it maps to $O(log  n)$ in my mind. This is a helpful technique that you can use to figure out what idea to implement for the problem you are trying to solve.
+This is one of the simplest problems I have encountered on LeetCode. However, I wanted to include it in my repository because of the way I approached and solved it within 2 seconds. In many cases, you can arrive at the idea of solving a problem by considering the "big O" of the algorithm that would be accepted. For example, since the constraints allowed for $O(n\log \ n)$, I decided to use "Sort" as it is also $O(n\log \ n)$. If a problem requires $O(log \ n)$, then I would first consider "Binary Search" as it maps to $O(log  n)$ in my mind. This is a helpful technique that you can use to figure out what idea to implement for the problem you are trying to solve.
 
-If we sort the array ( $O(n\log  n)$ ), all duplicate elements will become neighbors. Therefore, we can traverse the array once (which has a time complexity of $O(n)$ ) and check if there exists an element that is equal to its neighbor. 
+If we sort the array ( $O(n\log \ n)$ ), all duplicate elements will become neighbors. Therefore, we can traverse the array once, and check if there exists an element that is equal to its neighbor. 
 
 There are alternative techniques, such as utilizing "set" or ..., that may speed up the code. However, what I aimed to grasp from this problem, was to extract the idea from the big O the problem says it's fine to use.
