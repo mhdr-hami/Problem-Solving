@@ -61,7 +61,7 @@ Although we need only $O(n)$ to traverse through the sorted array of pairs using
 You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
 <br> You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. <br> Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return `0`.
 
-Example 1: <br> Input: prices = [7,1,5,3,6,4] <br> Output: 5 <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: prices = [7,6,4,3,1] <br> Output: 0 <br> Explanation: In this case, no transactions are done and the max profit = 0.
+Example 1: <br> Input: `prices = [7,1,5,3,6,4]` <br> Output: `5` <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: `prices = [7,6,4,3,1]` <br> Output: `0` <br> Explanation: In this case, no transactions are done and the max profit = 0.
  
 Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
 
@@ -83,14 +83,14 @@ To do this, as we traverse over the array, we must keep track of the minimum ele
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
  
 Example 1: <br>
-Input: nums = [1,2,3,1] <br>
-Output: true <br>
+Input: `nums = [1,2,3,1]` <br>
+Output: `true` <br>
 Example 2: <br>
-Input: nums = [1,2,3,4] <br>
-Output: false <br>
+Input: `nums = [1,2,3,4]` <br>
+Output: `false` <br>
 Example 3: <br>
-Input: nums = [1,1,1,3,3,4,3,2,4,2] <br>
-Output: true <br>
+Input: `nums = [1,1,1,3,3,4,3,2,4,2]` <br>
+Output: `true` <br>
 
 Constraints: <br>
 1 $\le$ `nums.length` $\le$ 10<sup>5</sup> <br>
@@ -117,11 +117,11 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 You must write an algorithm that runs in O(n) time and without using the division operation.
 
 Example 1: <br>
-Input: nums = [1,2,3,4] <br>
-Output: [24,12,8,6] <br>
+Input: `nums = [1,2,3,4]` <br>
+Output: `[24,12,8,6]` <br>
 Example 2: <br>
-Input: nums = [-1,1,0,-3,3] <br>
-Output: [0,0,9,0,0] <br>
+Input: `nums = [-1,1,0,-3,3]` <br>
+Output: `[0,0,9,0,0]` <br>
  
 Constraints: <br>
 2 $\le$ `nums.length` $\le$ 10<sup>5</sup> <br>
@@ -145,16 +145,16 @@ This problem has three main challenges. First, the solution must have a runtime 
 Given an integer array nums, find the subarray with the largest sum, and return its sum.
 
 Example 1: <br>
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4] <br>
-Output: 6 <br>
+Input: `nums = [-2,1,-3,4,-1,2,1,-5,4]` <br>
+Output: `6` <br>
 Explanation: The subarray [4,-1,2,1] has the largest sum 6. <br>
 Example 2: <br>
-Input: nums = [1] <br>
-Output: 1 <br>
+Input: `nums = [1]` <br>
+Output: `1` <br>
 Explanation: The subarray [1] has the largest sum 1. <br>
 Example 3: <br>
-Input: nums = [5,4,-1,7,8] <br>
-Output: 23 <br>
+Input: `nums = [5,4,-1,7,8]` <br>
+Output: `23` <br>
 Explanation: The subarray [5,4,-1,7,8] has the largest sum 23. <br>
  
 
