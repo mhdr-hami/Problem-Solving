@@ -23,6 +23,7 @@ I hope that you find this repository helpful :white_check_mark:.
 2. [LeetCode: Best Time to Buy and Sell Stock](#besttimetobuyandsellstock) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Optimization, One Traverse </details>
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
+5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 
 ***
 
@@ -134,3 +135,33 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 This problem has three main challenges. First, the solution must have a runtime complexity of $O(n)$, which means we need to consider ideas like creating an extra array, traversing once over the `nums` array, or using dynamic programming. Secondly, the problem states that we cannot use the division operation. This means that we cannot find the product of the entire `nums` array and then divide the total product by each element. Instead, we must calculate the answer for each element `curr` by computing the product of the elements before and after `curr`. Finally, `0` is a tricky number in this problem. If there is exactly one `0` in `nums`, then the output will only have one non-zero element. If `nums` has more than one `0`, then the entire output will be zeros. Apart from these, this problem is pretty straightforward. However, the idea we use to solve it is quite useful and can be applied to many other problems.
 
 "Partial Sum" refers to a general idea in which we create an array `ps`. Each `ps[i]` equals elements `arr[0]` to `arr[i-1]` of another array. I've used the partial sum idea in many problems. To solve this problem, we create two arrays: `pre` and `aft`. `pre[i]` is the product of `nums[0]` to `nums[i-1]`, while `aft[i]` is the product of `nums[i+1]` to `nums[last]` where `last` is the last element. To fill the output array, we multiply each element of `pre` with the corresponding element of `aft`. This algorithm has a runtime of $O(n)$ and handles the other two challenges mentioned.
+
+##
+
+### 5. LeetCode: Maximum Subarray [[Link]](https://leetcode.com/problems/maximum-subarray/ "LeetCode Submission Link") <a name="maximumsubarray"></a>
+
+#### Description
+
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
+
+Example 1: <br>
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4] <br>
+Output: 6 <br>
+Explanation: The subarray [4,-1,2,1] has the largest sum 6. <br>
+Example 2: <br>
+Input: nums = [1] <br>
+Output: 1 <br>
+Explanation: The subarray [1] has the largest sum 1. <br>
+Example 3: <br>
+Input: nums = [5,4,-1,7,8] <br>
+Output: 23 <br>
+Explanation: The subarray [5,4,-1,7,8] has the largest sum 23. <br>
+ 
+
+Constraints: <br>
+1 $\le$ `nums.length` $\le$ 10<sup>5</sup> <br>
+-10<sup>4</sup> $\le$ `nums[i]` $\le$ 10<sup>4</sup> <br>
+
+####
+
+#### Editorial
