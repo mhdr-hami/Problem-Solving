@@ -24,7 +24,7 @@ I hope that you find this repository helpful :white_check_mark:.
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
-6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
+6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubArray </details>
 
 ***
 
@@ -206,3 +206,9 @@ Constraints: <br>
 1 $\le$ `nums.length` $\le$ 2 * 10<sup>4</sup> <br>
 -10 $\le$ `nums[i]` $\le$ 10 <br>
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer. <br>
+
+####
+
+#### Editorial
+
+The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") .
