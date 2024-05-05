@@ -15,7 +15,7 @@ public:
         for(int i=1; i<nums.size(); i++){
             dp[i].first = max(nums[i], max(nums[i]*dp[i-1].first, nums[i]*dp[i-1].second));
             dp[i].second = min(nums[i], min(nums[i]*dp[i-1].first, nums[i]*dp[i-1].second));
-            global = max(global, max(dp[i].first, dp[i].second));
+            global = max(global, dp[i].first);
         }
 
         return global;
