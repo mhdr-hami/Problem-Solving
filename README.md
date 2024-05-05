@@ -215,7 +215,7 @@ The first step is to recognize it is a DP problem. How? Read the Dynamic Program
 
 Let's consider the testcase where `nums=[-2,1,-1]`. When we use the modified secret, `dp` would be like `[-2, 1, 1]`. However, this would return `1` as the answer, which is incorrect. The problem arises because when we calculated dp[1], we compared `1` and `1*(-2)`, and kept `1` because it was larger. Then, when calculating `dp[2]`, we had already forgotten about the element `-2`, even though it plays an important role in the final answer. In this problem, negative numbers can be turned into large positive numbers just by being multiplied by `-1`. Therefore, the key is to create the same `dp` array, but keep both the minimum and maximum answers for each group `dp[i]`. Then, when calculating `dp[i+1]`, we would consider if the minimum answer of the previous group can also turn into the maximum of the current one. This is the dp secret of this problem.
 
-`max_dp[i] = max(nums[i], max(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
+`max_dp[i] = max(nums[i], max(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))` <br>
 `min_dp[i] = min(nums[i], min(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
 
 We're creating two `dp` arrays, one storing the minimum answer and one storing the maximum answer for each group and to create each, we need to also consider the other array too! Because the maximum answer of previous group can turn to minimum answer of current group and the minimum answer of previous group can turn to maximum answer of current group. All is left to do, is take the maximum of all elements in `max_dp`.  
