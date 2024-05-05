@@ -218,4 +218,4 @@ Let's consider the testcase where `nums=[-2,1,-1]`. When we use the modified sec
 `max_dp[i] = max(nums[i], max(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
 `min_dp[i] = min(nums[i], min(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
 
-We're creating two `dp` arrays, one storing the minimum answer and one storing the maximum answer for each group and to create each, we need to also consider the other array too! All is left to do, is take the maximum of all elements in `max_dp`.  
+We're creating two `dp` arrays, one storing the minimum answer and one storing the maximum answer for each group and to create each, we need to also consider the other array too! Because the maximum answer of previous group can turn to minimum answer of current group and the minimum answer of previous group can turn to maximum answer of current group. All is left to do, is take the maximum of all elements in `max_dp`.  
