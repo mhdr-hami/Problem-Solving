@@ -52,7 +52,7 @@ Following the `brute force` idea, it would be great if we didn't have to walk th
 
 Sorting an array of elements seems to be difficult if you also need to keep track of their indexes, but there is a simple solution to this problem. If you require both sorting and index tracking, you can pair each element with its index and then sort the resultant array of pairs. 
 
-Although we need only $O(n)$ to traverse through the sorted array of pairs using two pointers, sorting the array itself requires a $O(n \ log \ n)$. Still, this is good enough to get the `Accept`.
+Although we need only $O(n)$ to traverse through the sorted array of pairs using two pointers, sorting the array itself requires a $O(n \  \ n)$. Still, this is good enough to get the `Accept`.
 
 ##
 
@@ -260,4 +260,6 @@ All the integers of nums are unique. <br>
 ####
 
 #### Editorial
+We have a array that created from one or two sorted subarrays and the problem description says we have to find an algorithm that runs in $O(log \ n)$. Knowing all this, it's hard not to think about binary search. 
 
+What we must do is to search for the first element that is not larger than `nums[0]`. because if an element is larger than `nums[0]`, it means it is a part of the first sorted subarray (note that we only have one break in the `nums`). All is left is literaly binary search. If `nums[mid]` $>$ `nums[0]`, then `mid` is before the break, and we must move the `low` to after it. Otherwise, we might have found the answer but to make sure it is the minimum element, we move the `high` to one element before the `mid`. 
