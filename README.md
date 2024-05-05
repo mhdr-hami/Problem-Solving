@@ -211,4 +211,11 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 #### Editorial
 
-The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") .
+The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . Also, as the second step of "my general approach" suggests, we must think about a similar problem that we've solved before and we can easily determine that it is a very similar problem to the Maximum Subarray problem. So, What does this problem challenge us ("Third step")? Why can't we just modify the secret we found for the previous problem and use `dp[i] = max(nums[i]*dp[i-1], nums[i])`? As mentioned before, to figure out how to solve a problem, it is important to find what is the challenging part of that problem.
+
+Let's consider the testcase where `nums=[-2,1,-1]`. When we use the modified secret, `dp` would be like `[-2, 1, 1]`. However, this would return `1` as the answer, which is incorrect. The problem arises because when we calculated dp[1], we compared `1` and `1*(-2)`, and kept `1` because it was larger. Then, when calculating `dp[2]`, we had already forgotten about the element `-2`, even though it plays an important role in the final answer. In this problem, negative numbers can be turned into large positive numbers just by being multiplied by `-1`. Therefore, the key is to create the same `dp` array, but keep both the minimum and maximum answers for each group `dp[i]`. Then, when calculating `dp[i+1]`, we would consider if the minimum answer of the previous group can also turn into the maximum of the current one. This is the dp secret of this problem.
+
+`max_dp[i] = max(nums[i], max(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
+`min_dp[i] = min(nums[i], min(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
+
+We're creating two `dp` arrays, one storing the minimum answer and one storing the maximum answer for each group and to create each, we need to also consider the other array too! All is left to do, is take the maximum of all elements in `max_dp`.  
