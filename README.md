@@ -24,6 +24,7 @@ I hope that you find this repository helpful :white_check_mark:.
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
+6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 
 ***
 
@@ -181,3 +182,9 @@ From this, we may tackle how to find the secret. Assume we want to find `dp[n-1]
 `dp[i] = max(nums[i]+dp[i-1], nums[i])`
 
 All is left to do is to create the `dp` array, and take maximum element in that.
+
+##
+
+### 6. LeetCode: Maximum Product Subarray [[Link]](https://leetcode.com/problems/maximum-product-subarray/ "LeetCode Submission Link") <a name="maximumproductsubarray"></a>
+
+#### Description
