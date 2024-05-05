@@ -172,4 +172,10 @@ Solving the maximum subarray problem, like any other DP problem, can be challeng
 
 The key to solving this problem is to group all subarrays based on their last element. Each group, denoted as `i`, includes all the subarrays that end with the element `nums[i]`. By determining the maximum subarray of each group as `dp[i]`, we can iterate through all of them and take their maximum as the solution.
 
-Let's start with `nums[0]`. The only subarray in the group of subarrays that ends with nums[0] is nums[0] itself. So the first step is easy. `dp[0]` is equal to `nums[0]`. Next, the subarrays that ends with `nums[1]`, is subarray `[nums[0], nums[1]]` and `nums[1]` it self. So the maximum sum of elements among these two, which is `dp[1]`, is max(`nums[0]+nums[1]`, `nums[1]`). To find a corralation between dp[1] and dp[0], we can substitude `nums[0]` with `dp[0]` as they are equal, so `dp[1]`=max(`dp[0]+nums[1]`, `nums[1]`). From this, we may tackle to find the secret. Assume we want to find `dp[n]` and we already have calculated `dp[n-1]`.
+Let's begin with `nums[0]`. The only subarray in the group of subarrays that ends with `nums[0]` is `nums[0]` itself. So, the first step is straightforward. `dp[0]` is equal to `nums[0]`. 
+
+Next, the subarrays that end with `nums[1]` are the subarray `[nums[0], nums[1]]` and `nums[1]` itself. The maximum sum of elements among these two, which is `dp[1]`, is the greater value between `nums[0]+nums[1]` and `nums[1]`. To find a correlation between `dp[1]` and `dp[0]`, we can substitute `nums[0]` with `dp[0]` as they are equal. Thus, `dp[1]` is equal to the greater value between `dp[0]+nums[1]` and `nums[1]`.
+
+From this, we may tackle how to find the secret. Assume we want to find `dp[n-1]` and we've already calculated `dp[n-2]`. Any subarray that ends with `nums[n-1]` is either `nums[n-1]` itself or all the subarrays in group `dp[n-2]` that `nums[n-1]` is added to them. Hence, the maximum sum in group `dp[n-1]` is either created by adding `nums[n-1]` to the answer of group `dp[n-2]` or by considering `nums[n-1]` by itself. That's it. We just found our secret. 
+
+`dp[i] = max(nums[i]+dp[i-1], nums[i])`
