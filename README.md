@@ -26,6 +26,7 @@ I hope that you find this repository helpful :white_check_mark:.
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Max Subarray </details>
 7. [LeetCode: Find Minimum in Rotated Sorted Array](#findminimuminrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search </details>
+8. [LeetCode: Search in Rotated Sorted Array](#searchinrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search, Rotated Problem </details>
 
 ***
 
@@ -260,6 +261,45 @@ All the integers of nums are unique. <br>
 ####
 
 #### Editorial
+
 We have a array that created from one or two sorted subarrays and the problem description says we have to find an algorithm that runs in $O(log \ n)$. Knowing all this, it's hard not to think about binary search. 
 
 What we must do is to search for the first element that is not larger than `nums[0]`. because if an element is larger than `nums[0]`, it means it is a part of the first sorted subarray (note that we only have one break in the `nums`). All is left is literaly binary search. If `nums[mid]` $>$ `nums[0]`, then `mid` is before the break, and we must move the `low` to after it. Otherwise, we might have found the answer but to make sure it is the minimum element, we move the `high` to one element before the `mid`. 
+
+##
+
+### 8. LeetCode: Search in Rotated Sorted Array [[Link]](https://leetcode.com/problems/search-in-rotated-sorted-array/ "LeetCode Submission Link") <a name="searchinrotatedsortedarray"></a>
+
+#### Description
+
+There is an integer array `nums` sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is possibly rotated at an unknown pivot index `k` (`1 <= k < nums.length`) such that the resulting array is `[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]` (0-indexed). For example, `[0,1,2,4,5,6,7]` might be rotated at pivot index 3 and become `[4,5,6,7,0,1,2]`.
+
+Given the array `nums` after the possible rotation and an integer `target`, return the index of target if it is in `nums`, or `-1` if it is not in `nums`.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+Example 1: <br>
+Input: `nums = [4,5,6,7,0,1,2]`, `target = 0` <br>
+Output: `4` <br>
+Example 2: <br>
+Input: `nums = [4,5,6,7,0,1,2]`, `target = 3` <br>
+Output: `-1` <br>
+Example 3: <br>
+Input: `nums = [1]`, `target = 0`<br>
+Output: `-1` <br>
+ 
+
+Constraints: <br>
+1 $\le$ `nums.length` $\le$ 5000 <br>
+-10<sup>4</sup> $\le$ `nums[i]` $\le$ 10<sup>4</sup> <br>
+All values of `nums` are unique. <br>
+nums is an ascending array that is possibly rotated. <br>
+-10<sup>4</sup> $\le$ `target` $\le$ 10<sup>4</sup> <br>
+
+####
+
+#### Editorial
+
+
