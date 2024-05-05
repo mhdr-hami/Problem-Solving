@@ -165,5 +165,6 @@ Constraints: <br>
 ####
 
 #### Editorial
-The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post. [[Link]] (https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link"). This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. Just like any other DP problem, solving the maximum subarray problem can be challenging until you discover its "secret".
+
+The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]] (https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link"). This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. Just like any other DP problem, solving the maximum subarray problem can be challenging until you discover its "secret".
 
