@@ -170,3 +170,5 @@ This was one of the first "not easy" dynamic programming problems I solved, but 
 
 Solving the maximum subarray problem, like any other DP problem, can be challenging until you discover its "secret". To solve this problem, we need to determine the smaller or simpler form of the problem.  The key is to divide the solution into sub-branches and use them to solve the main problem. For example, one way to do this is to check if a subarray contains the element `nums[i]` or not. This makes sub-branches and helps us determine whether having an element in one subarray means anything or not. Another way is to consider any subarray that starts or ends with an element `nums[i]` for each element in `nums`.
 
+The key to solving this problem is to divide all subarrays based on their last element. Each branch, denoted as `i`, includes all the subarrays that end with the element `nums[i]`. By determining the maximum subarray of each branch, we can iterate through all of them and take their maximum as the solution.
+
