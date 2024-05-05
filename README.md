@@ -166,5 +166,7 @@ Constraints: <br>
 
 #### Editorial
 
-The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. Just like any other DP problem, solving the maximum subarray problem can be challenging until you discover its "secret".
+This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . 
+
+Solving the maximum subarray problem, like any other DP problem, can be challenging until you discover its "secret". To solve this problem, we need to determine the smaller or simpler form of the problem.  The key is to divide the solution into sub-branches and use them to solve the main problem. For example, one way to do this is to check if a subarray contains the element `nums[i]` or not. This makes sub-branches and helps us determine whether having an element in one subarray means anything or not. Another way is to consider any subarray that starts or ends with an element `nums[i]` for each element in `nums`.
 
