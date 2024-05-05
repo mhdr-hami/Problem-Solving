@@ -24,7 +24,7 @@ I hope that you find this repository helpful :white_check_mark:.
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
-6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubArray </details>
+6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Max Subarray </details>
 
 ***
 
