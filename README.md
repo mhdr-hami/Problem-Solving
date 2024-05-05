@@ -25,6 +25,7 @@ I hope that you find this repository helpful :white_check_mark:.
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Max Subarray </details>
+7. [LeetCode: Find Minimum in Rotated Sorted Array](#findminimuminrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search </details>
 
 ***
 
@@ -219,3 +220,44 @@ Let's consider the testcase where `nums=[-2,1,-1]`. When we use the modified sec
 `min_dp[i] = min(nums[i], min(nums[i]*max_dp[i-1], nums[i]*min_dp[i-1]))`
 
 We're creating two `dp` arrays, one storing the minimum answer and one storing the maximum answer for each group and to create each, we need to also consider the other array too! Because the maximum answer of previous group can turn to minimum answer of current group and the minimum answer of previous group can turn to maximum answer of current group. All is left to do, is take the maximum of all elements in `max_dp`.  
+
+##
+
+### 7. LeetCode: Find Minimum in Rotated Sorted Array [[Link]](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ "LeetCode Submission Link") <a name="findminimuminrotatedsortedarray"></a>
+
+#### Description
+
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array `nums = [0,1,2,4,5,6,7]` might become: <br>
+`[4,5,6,7,0,1,2]` if it was rotated 4 times. <br>
+`[0,1,2,4,5,6,7]` if it was rotated 7 times. <br>
+Notice that rotating an array `[a[0], a[1], a[2], ..., a[n-1]]` 1 time results in the array `[a[n-1], a[0], a[1], a[2], ..., a[n-2]]`.
+
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+
+You must write an algorithm that runs in O(log n) time.
+
+Example 1: <br>
+Input: `nums = [3,4,5,1,2]` <br>
+Output: `1` <br>
+Explanation: The original array was [1,2,3,4,5] rotated 3 times. <br>
+Example 2: <br>
+Input: `nums = [4,5,6,7,0,1,2]` <br>
+Output: `0` <br>
+Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times. <br>
+Example 3: <br>
+Input: `nums = [11,13,15,17]` <br>
+Output: `11` <br>
+Explanation: The original array was [11,13,15,17] and it was rotated 4 times. <br>
+ 
+
+Constraints: <br>
+`n` == `nums.length` <br>
+1 $\le$ `n` $\le$ 5000 <br>
+-5000 $\le$ `nums[i]` $\le$ 5000 <br>
+All the integers of nums are unique. <br>
+`nums` is sorted and rotated between 1 and n times.
+
+####
+
+#### Editorial
+
