@@ -301,5 +301,5 @@ nums is an ascending array that is possibly rotated. <br>
 ####
 
 #### Editorial
-
+This is a very similar problem to the Find Minimum in Rotated Sorted Array problem. The main idea is to find the break using the idea we discussed before. After that, we have two sorted arrays and we know for each of them where it starts and ends. And the `target` is in one of them. How easy a problem can be :smirk:? 
 
