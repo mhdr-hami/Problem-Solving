@@ -342,3 +342,10 @@ Constraints: <br>
 
 #### Editorial
 
+As per the second step of "my general approach", we recall that we have previously solved a similar problem, which also had a similar name "two sum". Therefore, our initial attempt should be to apply the same idea, which is to use Two Pointers. This problem was quite important for me as it helped me gain a better understanding of how to use the Two Pointers approach properly.
+
+Let's discuss my first attempt at using the Two Pointers technique, which did not result in getting an `accepted` solution. 
+
+Since we need to search for a third element, and sorting `nums` does not conflict with what the problem requires, I sorted the `nums`. Next, I set `pointer1` at the beginning and `pointer2` at the end of the `sorted_nums`. This left me with only searching for the third element in the range of elements between these two pointers.
+
+If no third element was found, and `nums[pointer1] + nums[pointer2] > 0`, then we can safely decrease `pointer2` by one, as there are no two elements small enough to create the zero, with `pointer2` included. Similarly, if no third element was found, and `nums[pointer1] + nums[pointer2] < 0`, then we can safely increase `pointer1` by one, as there are no two elements big enough to create the zero, with `pointer1` included. However, things get tricky when we find the third element. The question we need to ask ourselves is what is the right thing to do in this case? Do we move `pointer1`, `pointer2`, both, or none? There is no right answer to this question, and this is the crucial key to using the Two Pointers technique. When moving a pointer, we must guarantee that this is the right decision to make; otherwise, we are not using this technique correctly.
