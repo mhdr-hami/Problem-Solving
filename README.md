@@ -29,6 +29,7 @@ I hope that you find this repository helpful :white_check_mark:.
 8. [LeetCode: Search in Rotated Sorted Array](#searchinrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search, Rotated Problem </details>
 9. [LeetCode: 3Sum](#threesum) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers, Sort </details>
 10. [LeetCode: Container With Most Water](#containerwithmostwater) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers </details>
+11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 
 ***
 
@@ -353,7 +354,6 @@ If no third element was found, and `nums[pointer1] + nums[pointer2] > 0`, then w
 
 To solve the problem, we need to loop through the `sorted_nums`. For each element `i`, we set `pointer1` to `i+1` and `pointer2` to the end of the `sorted_nums` array. Then, we check if the sum of these three elements is zero. If it is, we append them to the solution set. If the sum is greater than zero, we decrease `pointer2`, and if it's less than zero, we increase `pointer1`. We continue doing this for all elements in the array while ensuring that we move each pointer correctly. Also, this approach guarantees that we consider all possible triplets. The only downside to this method is that it has a runtime of $O(n^2)$, which is not an issue as range of values of `n` is small. However, there may be more efficient solutions available.
 
-
 ##
 
 ### 10. LeetCode: Container With Most Water [[Link]](https://leetcode.com/problems/container-with-most-water/ "LeetCode Submission Link") <a name="containerwithmostwater"></a>
@@ -391,3 +391,31 @@ In this problem, we are looking for a pair of heights that together with the x-a
 To find the largest container, we set `pointer1` to the first element and `pointer2` to the last element of the `height` array. We calculate the area of the container created by these two pointers and compare it to the `globalMax` we store at each step. Then we move one of the pointers. If `height[pointer1] < height[pointer2]`, we increase `pointer1`, otherwise, we decrease `pointer2`. 
 
 The width of the next container is decreased by moving each pointer closer to each other. The height of the next container is equal to `min(height[pointer1], height[pointer2])`. To find a larger container, we need to change the `min` of these two pointers. For example, if `height[pointer1] < height[pointer2]`, the height of our container is `height[pointer1]`. By moving `pointer2`, we either reach a `new_pointer2 > pointer2` which does not result in finding a larger container, or `new_pointer2 < pointer2` and `new_pointer2 > pointer1`, which again does not result in finding a larger container, or `new_pointer2 < pointer1`, which results in finding a smaller container as it has a smaller height now. Therefore, it is guaranteed that if there exists a larger container, it can only be found by moving the pointer with the smaller height.
+
+##
+
+### 11. LeetCode: Sum of Two Integers [[Link]](https://leetcode.com/problems/sum-of-two-integers/ "LeetCode Submission Link") <a name="sumoftwointegers"></a>
+
+#### Description
+
+Given two integers `a` and `b`, return the sum of the two integers without using the operators `+` and `-`.
+
+Example 1: <br>
+Input: `a = 1`, `b = 2` <br>
+Output: `3` <br>
+Example 2: <br>
+Input: `a = 2`, `b = 3` <br>
+Output: `5` <br>
+
+Constraints: <br>
+-1000 $\le$ `a`, `b` $\le$ 1000
+
+####
+
+#### Editorial
+
+We have to solve this problem using bitwise operations as we are not allowed to use operators `+` and `-`. Given two binary numbers `a` and `b`, we either can use `a & b`, `a | b`, or `a ^ b`. Also, we can apply `<<`, `>>`, or `~`  on each binary number. As someone who has no idea what to do, I start by taking a numeric example and playing with the operators I have. Consider `a=1101` and `b=0011`. `a & b == 0001`, `a | b == 1111`, and `a ^ b == 1110`. Next, by considering these three, I try to understand what each one of them is. Or at least, what does it look like it is. `a & b == 0001`, so it seems like `a & b` returns the carry we would have if we could apply the `+` operator. Also, `a ^ b == 1110`, which is similar to what we would have if we ignored considering the carry in calculating their sum. What I get from this, is I must shift the carry (as we do regularly in `+`) and add it to the sum without carry (`a ^ b`).
+
+So I should use a recursive function, and pass these two as parameters of the function we call inside. As the base case, we know we pass the carry as the second parameter, and we do not always have the carry, which means finally second parameter `b` would be zero and we can return `a` as the answer of that sum. 
+
+I know this editorial may seem a bit confusing and if you haven't seen a similar problem, the chance of finding the idea is not that much. But as you play with different numbers and walk through this editorial, it will make more sense for you and it may be useful for your future problem solving. 
