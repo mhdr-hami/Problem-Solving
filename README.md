@@ -30,6 +30,7 @@ I hope that you find this repository helpful :white_check_mark:.
 9. [LeetCode: 3Sum](#threesum) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers, Sort </details>
 10. [LeetCode: Container With Most Water](#containerwithmostwater) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers </details>
 11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
+12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 
 ***
 
@@ -414,8 +415,46 @@ Constraints: <br>
 
 #### Editorial
 
-We have to solve this problem using bitwise operations as we are not allowed to use operators `+` and `-`. Given two binary numbers `a` and `b`, we either can use `a & b`, `a | b`, or `a ^ b`. Also, we can apply `<<`, `>>`, or `~`  on each binary number. As someone who has no idea what to do, I start by taking a numeric example and playing with the operators I have. Consider `a=1101` and `b=0011`. `a & b == 0001`, `a | b == 1111`, and `a ^ b == 1110`. Next, by considering these three, I try to understand what each one of them is. Or at least, what does it look like it is. `a & b == 0001`, so it seems like `a & b` returns the carry we would have if we could apply the `+` operator. Also, `a ^ b == 1110`, which is similar to what we would have if we ignored considering the carry in calculating their sum. What I get from this, is I must shift the carry (as we do regularly in `+`) and add it to the sum without carry (`a ^ b`).
+We have to solve this problem using bitwise operations as we are not allowed to use operators `+` and `-`. Given two binary numbers `a` and `b`, we either can use `a & b`, `a | b`, or `a ^ b`. Also, we can apply `<<`, `>>`, or `~`  on each binary number. As someone who has no idea what to do, I start by taking a numeric example and playing with the operators I have. Consider `a=1101` and `b=0011`. `a & b = 0001`, `a | b = 1111`, and `a ^ b == 1110`. Next, by considering these three, I try to understand what each one of them is. Or at least, what does it look like it is. `a & b = 0001`, so it seems like `a & b` returns the carry we would have if we could apply the `+` operator. Also, `a ^ b = 1110`, which is similar to what we would have if we ignored considering the carry in calculating their sum. What I get from this, is I must shift the carry (as we do regularly in `+`) and add it to the sum without carry (`a ^ b`).
 
 So I should use a recursive function, and pass these two as parameters of the function we call inside. As the base case, we know we pass the carry as the second parameter, and we do not always have the carry, which means finally second parameter `b` would be zero and we can return `a` as the answer of that sum. 
 
 I know this editorial may seem a bit confusing and if you haven't seen a similar problem, the chance of finding the idea is not that much. But as you play with different numbers and walk through this editorial, it will make more sense for you and it may be useful for your future problem solving. 
+
+##
+
+### 12. LeetCode: Number of 1 Bits [[Link]](https://leetcode.com/problems/number-of-1-bits/ "LeetCode Submission Link") <a name="numberof1bits"></a>
+
+#### Description
+
+Write a function that takes the binary representation of a positive integer and returns the number of 
+set bits it has (also known as the Hamming weight).
+
+Example 1: <br>
+Input: `n = 11` <br>
+Output: `3` <br>
+Explanation: <br>
+The input binary string 1011 has a total of three set bits. <br>
+Example 2: <br>
+Input: `n = 128` <br>
+Output: `1` <br>
+Explanation: <br>
+The input binary string 10000000 has a total of one set bit. <br>
+Example 3: <br>
+Input: `n = 2147483645` <br>
+Output: `30` <br>
+Explanation: <br>
+The input binary string 1111111111111111111111111111101 has a total of thirty set bits. <br>
+
+Constraints: <br>
+1 $\le$ `n` $\le$ 2<sup>31</sup> - 1 <br>
+
+
+####
+
+#### Editorial
+
+The idea of thir problem is also a bit tricky and maybe hard to come to mind similar to the previous problem.
+To count the number of `1`s in a series of `1`s and `0`s, we must iterate through the series and increase the counter each time we see a `1`. Although we may not be able to exactly this, but we can use intuition behind it. 
+
+It would be great if we could find an operation (or a sequence of operations) that would get rid of only one bit of `1` in a number. Then, we could keep doing this and as the number is getting smaller (its `1`s are disappearing), this procedure would stop when the number gets equal to zero. Now, let's take a look at what happens to the binary presentation of a number `n`, when we modify it `n-1`. If `n=1100`, then `n-1=1011`. If `n=1010100`, then `n-1=1010011`. by taking a closer look, we find out that by subtracting `1` from `n`, the right most set bit in `n` changes to zero any other bit `x` to its right changes to `~x`. So by taking `&` operation of `n` and `n-1`, we would only change one set bit (the rigt most set bit) of `n` to zero and the rest of bits to the left of that set bit remain unchanged (`x&x=x` and `x&~x=0`). If `n=1(1)[00]`, then `n-1=1(0)[11]`, and `n&(n-1)=1(0)[00]`. If `n=1010(1)[00]`, then `n-1=1010(0)[11]`, and `n&(n-1)=1010(0)[00]`. 
