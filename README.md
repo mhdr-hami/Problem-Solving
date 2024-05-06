@@ -365,4 +365,17 @@ Find two lines that together with the x-axis form a container, such that the con
 Return the maximum amount of water a container can store. <br>
 Notice that you may not slant the container. <br>
 
+Example 1: <br>
+<p style="text_align:center"><img src="./Figures/FIGURE10.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
 
+Input: `height = [1,8,6,2,5,4,8,3,7]` <br>
+Output: `49` <br>
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49. <br>
+Example 2: <br>
+Input: `height = [1,1]` <br>
+Output: `1` <br>
+ 
+Constraints: <br>
+`n == height.length` <br>
+2 $\le$ `n` $\le$ 10<sup>5</sup> <br>
+0 $\le$ `height[i]` $\le$ 10<sup>4</sup> <br>
