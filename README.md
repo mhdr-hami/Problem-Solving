@@ -379,3 +379,9 @@ Constraints: <br>
 `n == height.length` <br>
 2 $\le$ `n` $\le$ 10<sup>5</sup> <br>
 0 $\le$ `height[i]` $\le$ 10<sup>4</sup> <br>
+
+####
+
+#### Editorial
+
+Upon reading the problem description, the first idea that came to mind was using the Two Pointers approach. Although this idea may stem from solving previous problems, I believe there is a pattern in problems that can be solved using this approach. Generally, `(1)` in Two Pointer problems, we need to find a set of elements that fulfill certain constraints through searching. This set of elements in the array can be a pair, a triplet, or even a subarray. Two Sum and 3Sum problems are two examples of this case. `(2)` Usually, the Two Pointer approach is used when the array is sorted. `(3)` However, the most important aspect of this approach (as in this problem) is to avoid nested loops and take advantage of having two pointers. `(4)` We need to find the logic and ensure the correctness of moving each pointer, which allows us to solve the problem more efficiently. These 4 
