@@ -596,4 +596,4 @@ This is a simple problem that can be solved using various methods. However, I ca
 
 First, let's review different bitmasking operations in C++. <br>
 + Setting a specific bit: <br>
-  - something something
+  - By setting a specific bit, we mean changing that bit to `1`. For instance, if `n=10[0]101` and we want to set the forth LSB (Least-Significant-Bit), we should generate `n'=10[0]101`. To do that, we start with a single bit `1`, we shift it to the location we want to set, and then we perform a bitwise OR. <br> <p style="text_align:center"><img src="./Figures/FIGURE15.jpeg" alt="Missing Number Figure" style="height: 150px; width:380px;"/></p>
