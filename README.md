@@ -31,7 +31,7 @@ I hope that you find this repository helpful :white_check_mark:.
 10. [LeetCode: Container With Most Water](#containerwithmostwater) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers </details>
 11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
-13. [LeetCode: Counting Bits](#countingbits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
+13. [LeetCode: Counting Bits](#countingbits) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
 
 ***
 
@@ -493,5 +493,11 @@ Constraints: <br>
 
 #### Editorial
 
-We remember we have solved the "Number of 1 Bits" before. As that approach has a good runtime of $O(log \ n)$, even calling that function for each element i between 1 and n would result in a runtime of $O(n \ log \ n)$ which is good enough. But we're about to challenge ourselves and try to solve this problem using an approach with a runtime of  $O(n)$.
+We remember we have solved the "Number of 1 Bits" before. As that approach has a good runtime of $O(log \ n)$, even calling that function for each element i between 1 and n would result in a runtime of $O(n \ log \ n)$ which is good enough. But we're about to challenge ourselves and try to solve this problem using DP with a runtime of $O(n)$.
 
+We create the array dp such that `dp[i]` is the number of `1 bit`s in the number `i`. Now, it's time to find the secret of this DP. Consider any arbitrary binary number like `n=11001`. We aim to find a relationship between the number of `1 bit`s in `n` and any number smaller than `n` that we have stored its answer in `dp`. By deleting the leftmost `1 bit` in `n=11001`, we can get a smaller number `n'=1001`. Now the question is how to get to `n'` from `n`. Deleting the leftmost `1 bit` from a number means subtracting the biggest power of 2 from that number. Hence, all that is left to do is to keep track of the biggest power of 2 while filling the `dp` and we know a power of 2 has a binary representation of one `1 bit` at the left and some `0 bit`s to its right.
+
+and here is our dp secret: <br>
+`dp[i] = dp[i-maxPower]+1`
+
+Here is a trick that we learned from the "Number of 1 Bits" problem. We know `n&(n-1)` removes the rightmost `1 bit` and keeps the rest of `1 bit`s unchanged. So if a number `n` is a power of 2, meaning its binary representation is in the form of one `1 bit` at the left and some `0 bit`s to its right, `n&(n-1)` must be zero. This is a very interesting trick that only with one bitwise operation, you can check if a number is a power of two or not.
