@@ -31,6 +31,7 @@ I hope that you find this repository helpful :white_check_mark:.
 10. [LeetCode: Container With Most Water](#containerwithmostwater) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers </details>
 11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
+13. [LeetCode: Counting Bits](#countingbits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 
 ***
 
@@ -457,4 +458,40 @@ Constraints: <br>
 The idea of thir problem is also a bit tricky and maybe hard to come to mind similar to the previous problem.
 To count the number of `1`s in a series of `1`s and `0`s, we must iterate through the series and increase the counter each time we see a `1`. Although we may not be able to exactly this, but we can use intuition behind it. 
 
-It would be great if we could find an operation (or a sequence of operations) that would get rid of only one bit of `1` in a number. Then, we could keep doing this and as the number is getting smaller (its `1`s are disappearing), this procedure would stop when the number gets equal to zero. Now, let's take a look at what happens to the binary presentation of a number `n`, when we modify it `n-1`. If `n=1100`, then `n-1=1011`. If `n=1010100`, then `n-1=1010011`. by taking a closer look, we find out that by subtracting `1` from `n`, the right most set bit in `n` changes to zero any other bit `x` to its right changes to `~x`. So by taking `&` operation of `n` and `n-1`, we would only change one set bit (the rigt most set bit) of `n` to zero and the rest of bits to the left of that set bit remain unchanged (`x&x=x` and `x&~x=0`). If `n=1(1)[00]`, then `n-1=1(0)[11]`, and `n&(n-1)=1(0)[00]`. If `n=1010(1)[00]`, then `n-1=1010(0)[11]`, and `n&(n-1)=1010(0)[00]`. 
+It would be great if we could find an operation (or a sequence of operations) that would get rid of only one bit of `1` in a number. Then, we could keep doing this and as the number is getting smaller (its `1`s are disappearing), this procedure would stop when the number gets equal to zero. Now, let's take a look at what happens to the binary presentation of a number `n`, when we modify it `n-1`. If `n=1100`, then `n-1=1011`. If `n=1010100`, then `n-1=1010011`. by taking a closer look, we find out that by subtracting `1` from `n`, the right most set bit in `n` changes to zero any other bit `x` to its right changes to `~x`. So by taking `&` operation of `n` and `n-1`, we would only change one set bit (the rigt most set bit) of `n` to zero and the rest of bits to the left of that set bit remain unchanged (`x&x=x` and `x&~x=0`). If `n=1(1)[00]`, then `n-1=1(0)[11]`, and `n&(n-1)=1(0)[00]`. If `n=1010(1)[00]`, then `n-1=1010(0)[11]`, and `n&(n-1)=1010(0)[00]`. This approach has runtime of $O(log \ n)$ as it must iterate through the number of digits in the binary representation of a number.
+
+##
+
+### 13. LeetCode: Counting Bits [[Link]](https://leetcode.com/problems/counting-bits/ "LeetCode Submission Link") <a name="countingbits"></a>
+
+#### Description
+
+Given an integer `n`, return an array `ans` of length `n + 1` such that for each `i` (0 <= `i` <= n), `ans[i]` is the number of `1`'s in the binary representation of `i`.
+
+Example 1: <br>
+Input: `n = 2` <br>
+Output: `[0,1,1]` <br>
+Explanation: <br>
+0 --> 0 <br>
+1 --> 1 <br>
+2 --> 10 <br>
+Example 2: <br>
+Input: `n = 5` <br>
+Output: `[0,1,1,2,1,2]` <br>
+Explanation: <br>
+0 --> 0 <br>
+1 --> 1 <br>
+2 --> 10 <br>
+3 --> 11 <br>
+4 --> 100 <br>
+5 --> 101 <br>
+ 
+Constraints: <br>
+0 $\le$ `n` $\le$ 10<sup>5</sup> <br>
+
+####
+
+#### Editorial
+
+We remember we have solved the "Number of 1 Bits" before. As that approach has a good runtime of $O(log \ n)$, even calling that function for each element i between 1 and n would result in a runtime of $O(n \ log \ n)$ which is good enough. But we're about to challenge ourselves and try to solve this problem using an approach with a runtime of  $O(n)$.
+
