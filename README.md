@@ -392,7 +392,7 @@ Return the maximum amount of water a container can store. <br>
 Notice that you may not slant the container. <br>
 
 Example 1: <br>
-<p style="text_align:center"><img src="./Figures/FIGURE10.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
+<p style="text_align:center"><img src="./Figures/FIGURE10.png" alt="Container Figure" style="height: 150px; width:380px;"/></p>
 
 Input: `height = [1,8,6,2,5,4,8,3,7]` <br>
 Output: `49` <br>
@@ -561,6 +561,6 @@ There exists an easy $O(n \ log \ n)$ approach, which is to sort the `nums`, loo
 
 But, there exist another approach (maybe faster?) that only uses xor operation. We know `x^x=0`. So if xor all the elements in `nums`, and then xor the result with all the numbers from `0` to `n`, we would have a large sequence, in which each number appears twice except one. So we eliminate all the pairs of numbers and the only number remaining (which is the final result of the xor sequence) is the answer. 
 
-<p style="text_align:center"><img src="./Figures/FIGURE14.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
+<p style="text_align:center"><img src="./Figures/FIGURE14.jpeg" alt="Missing Number Figure" style="height: 150px; width:380px;"/></p>
 
 ##
