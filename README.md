@@ -39,26 +39,39 @@ I hope that you find this repository helpful :white_check_mark:.
 
 #### Description
 
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 
-Example 1: <br> Input: `nums = [2,7,11,15], target = 9` <br> Output: `[0,1]` <br> Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]. <br> Example 2: <br> Input: `nums = [3,2,4], target = 6` <br> Output: `[1,2]` <br> Example 3: <br> Input: `nums = [3,3], target = 6` <br> Output: `[0,1]`
+Example 1: <br> 
+Input: `nums = [2,7,11,15], target = 9` <br> 
+Output: `[0,1]` <br> Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]. <br> 
+Example 2: <br> 
+Input: `nums = [3,2,4], target = 6` <br> 
+Output: `[1,2]` <br> 
+Example 3: <br> 
+Input: `nums = [3,3], target = 6` <br> 
+Output: `[0,1]`
 
-Constraints: <br> 2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br> -10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> -10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> + Only one valid answer exists.
+Constraints: <br> 
+2 $\le$ `nums.length` $\le$ 10<sup>4</sup> <br>
+-10<sup>9</sup> $\le$ `nums[i]` $\le$ 10<sup>9</sup> <br> 
+-10<sup>9</sup> $\le$ `target` $\le$ 10<sup>9</sup> <br> 
++ Only one valid answer exists.
+
 ####
 
 #### Editorial
 
 It's natural to consider the approach of `brute force` when faced with this problem. Since the input array is not sorted, we need to scan the entire array for each element to find the other element that makes up the target. As a result, the time complexity of this approach would be $O(n^2)$. As we move on to the third step of my general approach, it becomes clear that this approach is bound to result in a time-limit error. Additionally, we have to keep track of the indexes of elements, which means any operation that moves and swaps the elements is a challenge.
 
-Following the `brute force` idea, it would be great if we didn't have to walk through the entire array for each element  $O(n^2)$ . What does it require to find the answer only in one pass over the array $O(n)$ ? This means we can only perform one comparison for each element. However, the challenge is to determine the right element to calculate their sum and check if it matches the `target`. If the array was sorted, we could use the two-pointer idea by having one pointer at the start and the other at the end of the array. By comparing their sum with the `target`, we could identify the next best pair to consider. For example, if their sum is less than the `target`, we would need to consider a pair with a larger sum, and by moving the pointer that points to the smaller element one step to the right, we can be sure that we have achieved the next larger sum available in the entire array.
+Following the `brute force` idea, it would be great if we didn't have to walk through the entire array for each element  $O(n^2)$ . What does it require to find the answer only in one pass over the array $O(n)$ ? This means we can only perform one comparison for each element. However, the challenge is to determine the right element to calculate their sum and check if it matches the `target`. If the array was sorted, we could use the Two Pointer idea by having one pointer at the start and the other at the end of the array. By comparing their sum with the `target`, we could identify the next best pair to consider. For example, if their sum is less than the `target`, we would need to consider a pair with a larger sum, and by moving the pointer that points to the smaller element one step to the right, we can be sure that we have achieved the next larger sum available in the entire array.
 
 <p style="text_align:center"><img src="./Figures/FIGURE1.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
 
 Sorting an array of elements seems to be difficult if you also need to keep track of their indexes, but there is a simple solution to this problem. If you require both sorting and index tracking, you can pair each element with its index and then sort the resultant array of pairs. 
 
-Although we need only $O(n)$ to traverse through the sorted array of pairs using two pointers, sorting the array itself requires a $O(n \  \ n)$. Still, this is good enough to get the `Accept`.
+Although we need only $O(n)$ to traverse through the sorted array of pairs using Two Pointer, sorting the array itself requires a $O(n \  \ n)$. Still, this is good enough to get the `Accepted`.
 
 ##
 
@@ -69,9 +82,19 @@ Although we need only $O(n)$ to traverse through the sorted array of pairs using
 You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.
 <br> You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. <br> Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return `0`.
 
-Example 1: <br> Input: `prices = [7,1,5,3,6,4]` <br> Output: `5` <br> Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> Example 2: <br> Input: `prices = [7,6,4,3,1]` <br> Output: `0` <br> Explanation: In this case, no transactions are done and the max profit = 0.
+Example 1: <br> 
+Input: `prices = [7,1,5,3,6,4]` <br> 
+Output: `5` <br> 
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5. <br> 
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell. <br> 
+Example 2: <br> 
+Input: `prices = [7,6,4,3,1]` <br> 
+Output: `0` <br> 
+Explanation: In this case, no transactions are done and the max profit = 0.
  
-Constraints: <br> 1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
+Constraints: <br> 
+1 $\le$ `prices.length` $\le$ 10<sup>5</sup> <br> 
+0 $\le$ `prices[i]` $\le$ 10<sup>4</sup> <br>
 
 ####
 
