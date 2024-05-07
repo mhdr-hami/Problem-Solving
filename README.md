@@ -31,7 +31,7 @@ I hope that you find this repository helpful :white_check_mark:.
 10. [LeetCode: Container With Most Water](#containerwithmostwater) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers </details>
 11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
-13. [LeetCode: Counting Bits](#countingbits) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
+13. [LeetCode: Counting Bits](#countingbits) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
 
 ***
 
