@@ -33,6 +33,7 @@ I hope that you find this repository helpful :white_check_mark:.
 12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 13. [LeetCode: Counting Bits](#countingbits) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
 14. [LeetCode: Missing Number](#missingnumber) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation, Math </details>
+15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
 
 ***
 
@@ -564,3 +565,35 @@ But, there exist another approach (maybe faster?) that only uses xor operation. 
 <p style="text_align:center"><img src="./Figures/FIGURE14.jpeg" alt="Missing Number Figure" style="height: 150px; width:380px;"/></p>
 
 ##
+
+### 15. LeetCode: Reverse Bits [[Link]](https://leetcode.com/problems/reverse-bits/ "LeetCode Submission Link") <a name="reversebits"></a>
+
+#### Description
+
+Reverse bits of a given 32 bits unsigned integer.
+
+Note: <br>
+Note that in some languages, such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned. <br>
+In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
+
+Example 1: <br>
+Input: `n = 00000010100101000001111010011100` <br>
+Output:    `964176192` (`00111001011110000010100101000000`) <br>
+Explanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000. <br>
+Example 2: <br>
+Input: `n = 11111111111111111111111111111101` <br>
+Output:   `3221225471` (`10111111111111111111111111111111`) <br>
+Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
+ 
+Constraints: <br>
+The input `must` be a binary string of length 32
+
+####
+
+#### Editorial
+
+This is a simple problem that can be solved using various methods. However, I came across the solution provided by [LHearen](https://leetcode.com/u/LHearen/ "LHearen Leetcode Account") on his Leetcode account and found his bitmasking approach to be quite interesting. I think it would be helpful to share it with you, as it is a straightforward and easy-to-understand approach that can be applied to many other problems.
+
+First, let's review different bitmasking operations in C++. <br>
++ Setting a specific bit:
+ something something
