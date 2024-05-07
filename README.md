@@ -32,6 +32,7 @@ I hope that you find this repository helpful :white_check_mark:.
 11. [LeetCode: Sum of Two Integers](#sumoftwointegers) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 12. [LeetCode: Number of 1 Bits](#numberof1bits) :small_blue_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation </details>
 13. [LeetCode: Counting Bits](#countingbits) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
+14. [LeetCode: Missing Number](#missingnumber) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation, Math </details>
 
 ***
 
@@ -524,3 +525,38 @@ and here is our DP secret: <br>
 `dp[i] = dp[i-maxPower]+1`
 
 Here is a trick that we learned from the "Number of 1 Bits" problem. We know `n&(n-1)` removes the rightmost `1 bit` and keeps the rest of `1 bit`s unchanged. So if a number `n` is a power of 2, meaning its binary representation is in the form of one `1 bit` at the left and some `0 bit`s to its right, `n&(n-1)` must be zero. This is a very interesting trick that only with one bitwise operation, you can check if a number is a power of two or not.
+
+##
+
+### 14. LeetCode: Missing Number [[Link]](https://leetcode.com/problems/missing-number/ "LeetCode Submission Link") <a name="missingnumber"></a>
+
+#### Description
+
+Given an array `nums` containing `n` distinct numbers in the range `[0, n]`, return the only number in the range that is missing from the array.
+
+Example 1: <br>
+Input: `nums = [3,0,1]` <br>
+Output: `2` <br>
+Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums. <br>
+Example 2: <br>
+Input: `nums = [0,1]` <br>
+Output: `2` <br>
+Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums. <br>
+Example 3: <br>
+Input: `nums = [9,6,4,2,3,5,7,0,1]` <br>
+Output: `8` <br>
+Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums. <br>
+
+Constraints: <br>
+`n` == `nums.length` <br>
+1 $\le$ `n` $\le$ 10<sup>4</sup> <br>
+0 $\le$ `nums[i]` $\le$ `n` <br>
+All the numbers of nums are unique. <br>
+
+####
+
+#### Editorial
+
+There exists an easy $O(n \ log \ n)$ approach, which is to sort the `nums`, loop through it and check which number what is the first number that is missing. We can make use a faster approach with a runtime of $O(n)$, which to calculate the sum of all elements in `nums`, and then compare it to `n*(n+1)/2` which is the sum of all elements without any missing number. By comparing these two we can find the missing number.
+
+But, there exist another approach (maybe faster?) that only uses xor operation. We know `x^x=0`. So if xor all the elements in `nums`, and then xor the result with all the numbers from `0` to `n`, we would have a large sequence, in which each number appears twice except one. So we eliminate all the pairs of numbers and the only number remaining (which is the final result of the xor sequence) is the answer. 
