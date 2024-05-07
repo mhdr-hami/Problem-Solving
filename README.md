@@ -595,5 +595,5 @@ The input `must` be a binary string of length 32
 This is a simple problem that can be solved using various methods. However, I came across the solution provided by [LHearen](https://leetcode.com/u/LHearen/ "LHearen Leetcode Account") on his Leetcode account and found his bitmasking approach to be quite interesting. I think it would be helpful to share it with you, as it is a straightforward and easy-to-understand approach that can be applied to many other problems.
 
 First, let's review different bitmasking operations in C++. <br>
-+ Setting a specific bit:
- something something
++ Setting a specific bit: <br>
+  - something something
