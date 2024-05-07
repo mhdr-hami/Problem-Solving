@@ -560,3 +560,7 @@ All the numbers of nums are unique. <br>
 There exists an easy $O(n \ log \ n)$ approach, which is to sort the `nums`, loop through it and check which number what is the first number that is missing. We can make use a faster approach with a runtime of $O(n)$, which to calculate the sum of all elements in `nums`, and then compare it to `n*(n+1)/2` which is the sum of all elements without any missing number. By comparing these two we can find the missing number.
 
 But, there exist another approach (maybe faster?) that only uses xor operation. We know `x^x=0`. So if xor all the elements in `nums`, and then xor the result with all the numbers from `0` to `n`, we would have a large sequence, in which each number appears twice except one. So we eliminate all the pairs of numbers and the only number remaining (which is the final result of the xor sequence) is the answer. 
+
+<p style="text_align:center"><img src="./Figures/FIGURE14.png" alt="Two-Pointer Figure" style="height: 150px; width:380px;"/></p>
+
+##
