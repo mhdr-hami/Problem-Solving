@@ -34,6 +34,7 @@ I hope that you find this repository helpful :white_check_mark:.
 13. [LeetCode: Counting Bits](#countingbits) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Bit Manipulation </details>
 14. [LeetCode: Missing Number](#missingnumber) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation, Math </details>
 15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
+16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 
 ***
 
@@ -605,3 +606,40 @@ First, let's review different bitmasking operations in C++. <br>
   - In this operation, we check if a specific bit is set or not without touching any one of the bits. For instance, if `n=10[1]101`, and we want to check if the fourth LSB (Least-Significant-Bit) is set or not. To do that, we start with a single bit `1`, we shift it to the location we want to check, and then we perform a bitwise AND. That specific bit is set, if `n'` is `1`. <br> <p style="text_align:center"><img src="./Figures/FIGURE15_4.jpeg" alt="Missing Number Figure" style="height: 150px; width:380px;"/></p> <br>
 
 Now, let's get back to this problem. We want to generate a binary number `reverse` that is the reverse bits of a given binary number `n`. To do that, we create a 32 bits binary variable `mask` that only its MSB (Most-Significant-Bit) is set. Following that, we check if the LSB of `n` is set. If it is, we should set the MSB of the `reverse` too and we can do that by performing a bitwise OR. Then we shift both `mask` and `n` one to the right to check the next LSB in `n`.
+
+##
+
+### 16. LeetCode: Climbing Stairs [[Link]](https://leetcode.com/problems/climbing-stairs/ "LeetCode Submission Link") <a name="climbingstairs"></a>
+
+#### Description
+
+You are climbing a staircase. It takes `n` steps to reach the top. <br>
+Each time you can either climb `1` or `2` steps. In how many distinct ways can you climb to the top?
+
+Example 1: <br>
+Input: `n = 2` <br>
+Output: `2` <br>
+Explanation: There are two ways to climb to the top. <br>
+1. 1 step + 1 step <br>
+2. 2 steps <br>
+Example 2: <br>
+Input: `n = 3` <br>
+Output: `3` <br>
+Explanation: There are three ways to climb to the top. <br>
+1. 1 step + 1 step + 1 step <br>
+2. 1 step + 2 steps <br>
+3. 2 steps + 1 step <br>
+ 
+Constraints: <br>
+1 $\le$ `n` $\le$ 45 <br>
+
+####
+
+#### Editorial
+
+The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . In general, dynamic programming is applicable when tackling problems that involve determining the number of ways to accomplish a task, finding the maximum or minimum quantity of something, or situations where breaking down a problem's outcome into results from its prior steps is feasible. Similarly, problems that can be decomposed into smaller, more manageable subproblems are also indicative of dynamic programming as a potential solution strategy.
+
+Next, we must try to break the problem to find the DP secret. The process of breaking a problem starts with considering the answer to the problem. Of course, we don't know its value, but we can think about how it can be generated. The question is how we can break the process of finding the answer into smaller or simpler steps that we can solve, memorize, and use to get the final answer. One easy way of doing this, is to consider the last actions we could take, to reach the final step of the solution. Following from now, we'll cal this the "last actions" trick.
+
+The question is how many distinct ways there are to reach the top step. Let's utilize the "last actions" trick we just mentioned. In any distinct way of reaching the top step, your last action must be either `take 1 step` or `take 2 steps`. Additionally, these actions do not affect the number of ways we could reach the previous steps. Therefore, we can remember the answer for previous steps and use the last two steps to find the answer. And here is our DP secret:
+`dp[i] = dp[i-1] + dp[i-2]`
