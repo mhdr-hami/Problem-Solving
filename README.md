@@ -35,7 +35,7 @@ I hope that you find this repository helpful :white_check_mark:.
 14. [LeetCode: Missing Number](#missingnumber) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation, Math </details>
 15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
 16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
-17. [LeetCode: Coin Change](#coinchange) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
+17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 
 ***
 
