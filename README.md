@@ -35,6 +35,7 @@ I hope that you find this repository helpful :white_check_mark:.
 14. [LeetCode: Missing Number](#missingnumber) :small_orange_diamond: <details> <summary>:dart:idea</summary> Bit Manipulation, Math </details>
 15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
 16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
+17. [LeetCode: Coin Change](#coinchange) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 
 ***
 
@@ -639,7 +640,46 @@ Constraints: <br>
 
 The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . In general, dynamic programming is applicable when tackling problems that involve determining the number of ways to accomplish a task, finding the maximum or minimum quantity of something, or situations where breaking down a problem's outcome into results from its prior steps is feasible. Similarly, problems that can be decomposed into smaller, more manageable subproblems are also indicative of dynamic programming as a potential solution strategy.
 
-Next, we must try to break the problem to find the DP secret. The process of breaking a problem starts with considering the answer to the problem. Of course, we don't know its value, but we can think about how it can be generated. The question is how we can break the process of finding the answer into smaller or simpler steps that we can solve, memorize, and use to get the final answer. One easy way of doing this, is to consider the last actions we could take, to reach the final step of the solution. Following from now, we'll cal this the "last actions" trick.
+Next, we must try to break the problem to find the DP secret. The process of breaking a problem starts with considering the final answer to the problem. Of course, we don't know its value, but we can think about how it can be generated. The question is how we can break the process of finding the answer into smaller or simpler steps that we can solve, memorize(DP), and use to get the final answer. One easy way of doing this, is to consider the last actions we could take, to reach the final step of the solution. Following from now, we'll cal this the "last actions" trick.
 
 The question is how many distinct ways there are to reach the top step. Let's utilize the "last actions" trick we just mentioned. In any distinct way of reaching the top step, your last action must be either `take 1 step` or `take 2 steps`. Additionally, these actions do not affect the number of ways we could reach the previous steps. Therefore, we can remember the answer for previous steps and use the last two steps to find the answer. And here is our DP secret:
 `dp[i] = dp[i-1] + dp[i-2]`
+
+##
+
+### 17. LeetCode: Coin Change [[Link]](https://leetcode.com/problems/coin-change/ "LeetCode Submission Link") <a name="coinchange"></a>
+
+#### Description
+
+
+
+Topics
+Companies
+You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. <br>
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`. <br>
+You may assume that you have an infinite number of each kind of coin. <br>
+
+Example 1: <br>
+Input: `coins = [1,2,5]`, `amount = 11` <br>
+Output: `3` <br>
+Explanation: 11 = 5 + 5 + 1 <br>
+Example 2: <br>
+Input: `coins = [2]`, `amount = 3` <br>
+Output: `-1` <br>
+Example 3: <br>
+Input: `coins = [1]`, `amount = 0` <br>
+Output: `0` <br>
+
+Constraints: <br>
+1 $\le$ `coins.length` $\le$ 12 <br>
+1 $\le$ `coins[i]` $\le$ 2<sup>31</sup> - 1 <br>
+0 $\le$ `amount` $\le$ 10<sup>4</sup> <br>
+
+####
+
+#### Editorial
+We figure out this problem can be solved using DP, as it asks for the fewest number of ways to achieve a goal. One useful strategy is to use the "last action" trick, which involves solving the main problem using the answers of smaller problems (in this case, any amount smaller than `amount`). To break the problem into smaller and simpler pieces, we can focus on just one of these coins, denoted as `c`. By removing `c`, we achieve a smaller amount (`amount - c`), and using buttom-up approach, we must know `x`, as the fewest number of coins needed to make up that `amount - c`. As we took out only one coin, the answer for `amount` would be `x+1`.
+
+But, we have different coins and by taking out each coin, we end up to a different smaller acount with a different answer. Which one should we take out? As we need to find the fewest number of coins, we must consider taking out all of the coins one by one, and find the one that results in a smaller answer for `amount`. This is our DP secret. 
+
+`dp[i] = dp[i-coins[c]] + 1` where `dp[i-coins[c]` is the minimum `dp[i-coins[j]` one among all the coins `j`. 
