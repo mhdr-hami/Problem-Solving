@@ -682,4 +682,4 @@ We figure out this problem can be solved using DP, as it asks for the fewest num
 
 But, we have different coins and by taking out each coin, we end up to a different smaller acount with a different answer. Which one should we take out? As we need to find the fewest number of coins, we must consider taking out all of the coins one by one, and find the one that results in a smaller answer for `amount`. This is our DP secret. 
 
-`dp[i] = dp[i-coins[c]] + 1` where `dp[i-coins[c]` is the minimum `dp[i-coins[j]` one among all the coins `j`. 
+`dp[i] = dp[i-coins[c]] + 1` <br> where `dp[i-coins[c]` is the minimum `dp[i-coins[j]` one among all the coins `j`. 
