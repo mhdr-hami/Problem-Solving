@@ -36,6 +36,7 @@ I hope that you find this repository helpful :white_check_mark:.
 15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
 16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
+18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 
 ***
 
@@ -651,10 +652,6 @@ The question is how many distinct ways there are to reach the top step. Let's ut
 
 #### Description
 
-
-
-Topics
-Companies
 You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. <br>
 Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return `-1`. <br>
 You may assume that you have an infinite number of each kind of coin. <br>
@@ -683,3 +680,28 @@ We figure out this problem can be solved using DP, as it asks for the fewest num
 But, we have different coins and by taking out each coin, we end up to a different smaller acount with a different answer. Which one should we take out? As we need to find the fewest number of coins, we must consider taking out all of the coins one by one, and find the one that results in a smaller answer for `amount`. This is our DP secret. 
 
 `dp[i] = dp[i-coins[c]] + 1` <br> where `dp[i-coins[c]` is the minimum `dp[i-coins[j]` one among all the coins `j`. 
+
+
+##
+
+### 18. LeetCode: Longest Increasing Subsequence [[Link]](https://leetcode.com/problems/longest-increasing-subsequence/ "LeetCode Submission Link") <a name="longestincreasingsubsequence"></a>
+
+#### Description
+
+Given an integer array `nums`, return the length of the longest strictly increasing
+subsequence.
+
+Example 1: <br>
+Input: `nums = [10,9,2,5,3,7,101,18]` <br>
+Output: `4` <br>
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4. <br>
+Example 2: <br>
+Input: `nums = [0,1,0,3,2,3]` <br>
+Output: `4` <br>
+Example 3: <br>
+Input: `nums = [7,7,7,7,7,7,7]` <br>
+Output: `1` <br>
+
+Constraints: <br>
+1 $\le$ `nums.length` $\le$ 2500 <br>
+-10<sup>4</sup> $\le$ `nums[i]` $\le$ 10<sup>4</sup> <br>
