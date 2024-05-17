@@ -24,7 +24,7 @@ I hope that you find this repository helpful :white_check_mark:.
 3. [LeetCode: Contains Duplicate](#containsduplicate) :small_blue_diamond: <details> <summary>:dart:idea</summary>  Sort, big O </details>
 4. [LeetCode: Product of Array Except Self](#productofarrayexceptself) :small_orange_diamond: <details> <summary>:dart:idea</summary> Partial Sum </details>
 5. [LeetCode: Maximum Subarray](#maximumsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
-6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Max Subarray </details>
+6. [LeetCode: Maximum Product Subarray](#maximumproductsubarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 7. [LeetCode: Find Minimum in Rotated Sorted Array](#findminimuminrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search </details>
 8. [LeetCode: Search in Rotated Sorted Array](#searchinrotatedsortedarray) :small_orange_diamond: <details> <summary>:dart:idea</summary> Binary Search, Rotated Problem </details>
 9. [LeetCode: 3Sum](#threesum) :small_orange_diamond: <details> <summary>:dart:idea</summary> Two Pointers, Sort </details>
@@ -36,7 +36,7 @@ I hope that you find this repository helpful :white_check_mark:.
 15. [LeetCode: Reverse Bits](#reversebits) :small_blue_diamond: <details> <summary>:dart:idea</summary> BitMask </details>
 16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
-18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
+18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 
 ***
 
@@ -675,6 +675,7 @@ Constraints: <br>
 ####
 
 #### Editorial
+
 We figure out this problem can be solved using DP, as it asks for the fewest number of ways to achieve a goal. One useful strategy is to use the "last action" trick, which involves solving the main problem using the answers of smaller problems (in this case, any amount smaller than `amount`). To break the problem into smaller and simpler pieces, we can focus on just one of these coins, denoted as `c`. By removing `c`, we achieve a smaller amount (`amount - c`), and using buttom-up approach, we must know `x`, as the fewest number of coins needed to make up that `amount - c`. As we took out only one coin, the answer for `amount` would be `x+1`.
 
 But, we have different coins and by taking out each coin, we end up to a different smaller acount with a different answer. Which one should we take out? As we need to find the fewest number of coins, we must consider taking out all of the coins one by one, and find the one that results in a smaller answer for `amount`. This is our DP secret. 
@@ -705,3 +706,12 @@ Output: `1` <br>
 Constraints: <br>
 1 $\le$ `nums.length` $\le$ 2500 <br>
 -10<sup>4</sup> $\le$ `nums[i]` $\le$ 10<sup>4</sup> <br>
+
+####
+
+#### Editorial
+
+We can solve this problem using DP since it requires finding the longest subsequence that satisfies a certain condition. Additionally, since we are searching for a subsequence in an array, we can apply the main idea from the MaxSubArray problem that we have previously solved. The approach involves considering the last element of all existing subarrays. Any solution subarray (subsequence) ends with one of the elements in `nums`. Therefore, we can break the problem by looping through each element `nums[i]`, checking all the subarrays that end with that element, and storing the best answer for each (`dp[i]`). Finally, we can take the maximum of the stored answers to obtain the final solution.
+
+To find the DP secret, we need to determine how to assign a value to `dp[i]` using previous elements in `dp[]`. We know that `dp[i]` represents the length of the longest increasing subsequence that ends with element `nums[i]`. Therefore, `nums[i]` is a part of this subsequence and must be greater than the second last element of that subsequence (the element that comes before `nums[i]`). Thus, all that's left is to loop through all elements `nums[j]` (`j` $<$ `i`) where `nums[j]` $<$ `nums[i]`, and select the one with the maximum value of `dp[j]` to find the length of the longest subsequence (`dp[i]`) for the current `i`. And here is our DP secret: <br>
+`dp[i] = dp[j] + 1` where `nums[j]` $<$ `nums[i]` && `dp[j] + 1` $>$ `dp[i]`
