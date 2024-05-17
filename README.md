@@ -37,6 +37,7 @@ I hope that you find this repository helpful :white_check_mark:.
 16. [LeetCode: Climbing Stairs](#climbingstairs) :small_blue_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
+19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 
 ***
 
@@ -715,3 +716,38 @@ We can solve this problem using DP since it requires finding the longest subsequ
 
 To find the DP secret, we need to determine how to assign a value to `dp[i]` using previous elements in `dp[]`. We know that `dp[i]` represents the length of the longest increasing subsequence that ends with element `nums[i]`. Therefore, `nums[i]` is a part of this subsequence and must be greater than the second last element of that subsequence (the element that comes before `nums[i]`). Thus, all that's left is to loop through all elements `nums[j]` (`j` $<$ `i`) where `nums[j]` $<$ `nums[i]`, and select the one with the maximum value of `dp[j]` to find the length of the longest subsequence (`dp[i]`) for the current `i`. And here is our DP secret:
 `dp[i] = dp[j] + 1` where `nums[j]` $<$ `nums[i]` && `dp[j] + 1` $>$ `dp[i]`
+
+
+##
+
+### 19. LeetCode: Longest Common Subsequence [[Link]](https://leetcode.com/problems/longest-common-subsequence/ "LeetCode Submission Link") <a name="longestcommonsubsequence"></a>
+
+#### Description
+
+Given two strings `text1` and `text2`, return the length of their longest common subsequence. If there is no common subsequence, return `0`. <br>
+A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters. For example, "ace" is a subsequence of "abcde". <br>
+A common subsequence of two strings is a subsequence that is common to both strings.
+
+ 
+
+Example 1: <br>
+Input: `text1 = "abcde"`, `text2 = "ace"` <br>
+Output: `3`  <br>
+Explanation: The longest common subsequence is "ace" and its length is 3. <br>
+Example 2: <br> 
+Input: `text1 = "abc"`, `text2 = "abc"` <br>
+Output: `3` <br>
+Explanation: The longest common subsequence is "abc" and its length is 3. <br>
+Example 3: <br>
+Input: `text1 = "abc"`, `text2 = "def"` <br>
+Output: `0` <br>
+Explanation: There is no such common subsequence, so the result is 0.
+ 
+
+Constraints: <br>
+1 $\le$ `text1.length`, `text2.length` $\le$ 1000 <br>
+`text1` and `text2` consist of only lowercase English characters.
+
+####
+
+#### Editorial
