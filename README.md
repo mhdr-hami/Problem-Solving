@@ -752,6 +752,6 @@ Constraints: <br>
 
 #### Editorial
 
-Longest + subsequence => When we begin to tackle DP, it's important to recognize that this problem differs from others we've solved using DP. In this case, we are going to learn a new technique for uncovering the DP secret, which I call "SFR" or "Start From Recursive". When you're unable to directly find the DP secret and are stuck, this approach can be quite useful. You start by attempting to solve the problem using the "Recursive" approach and then convert it to "Memoization" (recursive + a `dp[]` array to store results). Following that, you can also attempt the "Tabulation" method (the technique we've been using so far, which I prefer over memoization due to its intuitive nature).
+Longest + subsequence => DP. When we begin to tackle DP, it's important to recognize that this problem differs from others we've solved using DP. In this case, we are going to learn a new technique for uncovering the DP secret, which I call "SFR" or "Start From Recursive". When you're unable to directly find the DP secret and are stuck, this approach can be quite useful. You start by attempting to solve the problem using the "Recursive" approach and then convert it to "Memoization" (recursive + a `dp[]` array to store results). Following that, you can also attempt the "Tabulation" method (the technique we've been using so far, which I prefer over memoization due to its intuitive nature).
 
 Consider two strings `text1` and `text2`. Always remember to think simple and go step by step. 
