@@ -81,7 +81,7 @@ Although we need only $O(n)$ to traverse through the sorted array of pairs using
 
 ##
 
-### 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
+### 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
 
 #### Description
 
