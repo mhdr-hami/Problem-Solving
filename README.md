@@ -38,7 +38,7 @@ I hope that you find this repository helpful :white_check_mark:.
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, SFR, Last Actions </details>
-20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
+20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 
 ***
 
