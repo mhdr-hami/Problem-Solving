@@ -38,6 +38,7 @@ I hope that you find this repository helpful :white_check_mark:.
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, SFR, Last Actions </details>
+20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 
 ***
 
@@ -761,3 +762,43 @@ Next, we draw the tree the recursuve function creates, to understand what is goi
 There are many cases that are duplicates of each other, and we could save a lot of computation and time if we could store the results we calculated. In this figure, for instance, we are calling the function with the same strings "ABC" and "ACF" in two separate branches. This procedure, shows us that we need DP and also gives us some ideas on how to implement it.
 
 The memoization method is exactly the recursive function, except we store the numbers in `dp[]` before returning them, and check for answers in `dp[]` before calculating them. Knowing this, it's much easier to come up with the DP secret for the tabulation method: <br> `if(text1[i-1]==text2[j-1]) dp[i][j] = 1 + dp[i-1][j-1]` <br> `else dp[i][j] = max(dp[i-1][j], dp[i][j-1])`
+
+
+
+##
+
+### 20. LeetCode: Word Break [[Link]](https://leetcode.com/problems/word-break/ "LeetCode Submission Link") <a name="wordbreak"></a>
+
+#### Description
+
+Given a string `s` and a dictionary of strings `wordDict`, return `true` if `s` can be segmented into a space-separated sequence of one or more dictionary words. <br>
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+
+
+Example 1: <br>
+Input: `s = "leetcode"`, `wordDict = ["leet","code"]` <br>
+Output: `true` <br>
+Explanation: Return true because "leetcode" can be segmented as "leet code". <br>
+Example 2: <br>
+Input: `s = "applepenapple"`, `wordDict = ["apple","pen"]` <br>
+Output: `true` <br>
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple". <br>
+Note that you are allowed to reuse a dictionary word. <br>
+Example 3: <br>
+Input: `s = "catsandog"`, `wordDict = ["cats","dog","sand","and","cat"]` <br>
+Output: `false` <br>
+ 
+
+
+Constraints: <br>
+1 $\le$ `s.length` $\le$ 300 <br>
+1 $\le$ `wordDict.length` $\le$ 1000 <br>
+1 $\le$ `wordDict[i].length` $\le$ 20 <br>
+`s` and `wordDict[i]` consist of only lowercase English letters. <br>
+All the strings of wordDict are unique. <br>
+
+
+####
+
+#### Editorial
+
