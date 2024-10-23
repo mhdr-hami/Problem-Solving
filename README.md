@@ -41,6 +41,7 @@ I hope that you find this repository helpful :white_check_mark:.
 20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 21. [LeetCode: Combination Sum IV](#combinationsumiv) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 22. [LeetCode: House Robber](#houserobber) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
+23. [LeetCode: House Robber II](#houserobberii) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 
 ***
 
@@ -895,3 +896,38 @@ Constraints: <br>
 #### Editorial
 
 Returning the maximum amount of something indicates a dynamic programming approach. The Target here is the array `nums`, so our `dp[]` array must be the same size as `nums`, with `dp[i]` representing the answer considering the houses from `nums[0]` to `nums[i]`. What's the DP secret? The main constraint is that no houses next to each other can be robbed. Therefore, to calculate each `dp[i]`, we take the maximum of robbing the current house and adding `dp[i-2]` (since we can't use house `i-1` anymore), or simply using `dp[i-1]`. So our DP secret is: `dp[i] = max(dp[i-2] + nums[i], dp[i-1])`. Question: Does `dp[i]` only store the value when house `i` is robbed? No, `dp[i]` stores the maximum amount of money you can rob from house `0` to `i`, so the answer lies in `dp[nums.size() - 1]`.
+
+
+##
+
+### 23. LeetCode: House Robber II [[Link]](https://leetcode.com/problems/house-robber-ii/ "LeetCode Submission Link") <a name="houserobberii"></a>
+
+#### Description
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night. <br>
+Given an integer array `nums` representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. <br>
+
+
+Example 1: <br>
+Input: `nums = [2,3,2]` <br>
+Output: `3` <br>
+Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses. <br>
+Example 2: <br>
+Input: `nums = [1,2,3,1]` <br>
+Output: `4` <br>
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3). <br>
+Total amount you can rob = 1 + 3 = 4. <br>
+Example 3: <br>
+Input: `nums = [1,2,3]` <br>
+Output: `3` <br>
+ 
+
+Constraints: <br>
+1 $\le$ `nums.length` $\le$ 100 <br>
+0 $\le$ `nums[i]` $\le$ 1000 <br>
+
+####
+
+#### Editorial
+
+This problem is very similar to the previous one, with the only challenge being that the houses are now arranged in a circle. Since the first house is the neighbor of the last one, our previous solution doesn't work as it doesn't account for this. The solution is to handle two different scenarios: one where the first house is robbed and the last house is not, and one where the first house is not robbed (regardless of whether the last house is robbed). Since these are the only possibilities, we solve both approaches and take the maximum of the two.
