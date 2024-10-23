@@ -38,6 +38,7 @@ I hope that you find this repository helpful :white_check_mark:.
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, SFR, Last Actions </details>
+20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
 
 ***
 
@@ -81,7 +82,7 @@ Although we need only $O(n)$ to traverse through the sorted array of pairs using
 
 ##
 
-### 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/two-sum/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
+### 2. LeetCode: Best Time to Buy and Sell Stock [[Link]](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/ "LeetCode Submission Link") <a name="besttimetobuyandsellstock"></a>
 
 #### Description
 
@@ -203,7 +204,7 @@ Constraints: <br>
 
 #### Editorial
 
-This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . 
+This was one of the first "not easy" dynamic programming problems I solved, but it taught me a lot about this paradigm. The first step is to recognize it is a DP problem. How? We will learn together!
 
 Solving the maximum subarray problem, like any other DP problem, can be challenging until you discover its "". To solve this problem, we need to determine the smaller or simpler form of the problem.  The key is to divide the solution into sub-groups and use them to solve the main problem. For example, one way to do this is to check if a subarray contains the element `nums[i]` or not. This makes sub-groups and helps us determine whether having an element in one subarray means anything or not. Another way is to consider any subarray that starts or ends with an element `nums[i]` for each element in `nums`.
 
@@ -247,7 +248,7 @@ The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit int
 
 #### Editorial
 
-The first step is to recognize it is a DP problem. How? Read the Dynamic Programming post [[Link]](https://github.com/mhdr-hami/Problem-Solving/blob/main/DynamicProgramming.md "Dynamic Programming post Link") . Also, as the second step of "my general approach" suggests, we must think about a similar problem that we've solved before and we can easily determine that it is a very similar problem to the Maximum Subarray problem. So, What does this problem challenge us ("Third step")? Why can't we just modify the secret we found for the previous problem and use `dp[i] = max(nums[i]*dp[i-1], nums[i])`? As mentioned before, to figure out how to solve a problem, it is important to find what is the challenging part of that problem.
+The first step is to recognize it is a DP problem. How? It's an optimization problem, searching for a maximum/minimum of something and it looks like the other problem we just solved! Also, as the second step of "my general approach" suggests, we must think about a similar problem that we've solved before and we can easily determine that it is a very similar problem to the Maximum Subarray problem. So, What does this problem challenge us ("Third step")? Why can't we just modify the secret we found for the previous problem and use `dp[i] = max(nums[i]*dp[i-1], nums[i])`? As mentioned before, to figure out how to solve a problem, it is important to find what is the challenging part of that problem.
 
 Let's consider the testcase where `nums=[-2,1,-1]`. When we use the modified secret, `dp` would be like `[-2, 1, 1]`. However, this would return `1` as the answer, which is incorrect. The problem arises because when we calculated dp[1], we compared `1` and `1*(-2)`, and kept `1` because it was larger. Then, when calculating `dp[2]`, we had already forgotten about the element `-2`, even though it plays an important role in the final answer. In this problem, negative numbers can be turned into large positive numbers just by being multiplied by `-1`. Therefore, the key is to create the same `dp` array, but keep both the minimum and maximum answers for each group `dp[i]`. Then, when calculating `dp[i+1]`, we would consider if the minimum answer of the previous group can also turn into the maximum of the current one. This is the DP secret of this problem.
 
@@ -752,6 +753,52 @@ Constraints: <br>
 
 #### Editorial
 
-Longest + subsequence => When we begin to tackle DP, it's important to recognize that this problem differs from others we've solved using DP. In this case, we are going to learn a new technique for uncovering the DP secret, which I call "SFR" or "Start From Recursive". When you're unable to directly find the DP secret and are stuck, this approach can be quite useful. You start by attempting to solve the problem using the "Recursive" approach and then convert it to "Memoization" (recursive + a `dp[]` array to store results). Following that, you can also attempt the "Tabulation" method (the technique we've been using so far, which I prefer over memoization due to its intuitive nature).
+Longest + subsequence => DP. When we begin to tackle DP, it's important to recognize that this problem differs from others we've solved using DP. In this case, we are going to learn a new technique for uncovering the DP secret, which I call "SFR" or "Start From Recursive". When you're unable to directly find the DP secret and are stuck, this approach can be quite useful. You start by attempting to solve the problem using the "Recursive" approach and then convert it to "Memoization" (recursive + a `dp[]` array to store results). Following that, you can also attempt using the "Tabulation" method (the technique we've been using so far, which I prefer over memoization due to its intuitive nature).
 
-Consider two strings `text1` and `text2`. Always remember to think simple and go step by step. 
+Consider two strings `text1` and `text2`. Always remember to think simply and go step by step. To find a common subsequence, we must consider single characters in two strings and check with a structure. As we may not find the DP secret right away, we start by trying to solve it using the recursive approach. The recursive function must take two strings `text1` and `text2` as input, call the function inside itself for smaller strings, and return the length of the longest common subsequence. The idea would be to check the last character of the two input strings. If they are the same characters, it means this character is a part of the common subsequence, so we can move on to return `1 + func(text1 - lastChar1, text2 - lastChar2)` (where `lastChar1` == `lastChar2`) strings. If the last character of two strings is not the same, as we want the length of the **longest** common subsequence and we don't know which `lastChar` we should ignore, we consider both scenarios and return `max(func(text1 - lastChar1, text2), func(text1, text2 - lastChar2)`. The base case is when at least one of the input strings is empty which we return `0`.
+
+Next, we draw the tree the recursuve function creates, to understand what is going on. This tree is an example for two input strings "ABCD" and "ACFB".
+<p style="text_align:center"><img src="./Figures/FIGURE19.jpeg" alt="Recursive Tree Figure" style="height: 150px; width:380px;"/></p> <br>
+There are many cases that are duplicates of each other, and we could save a lot of computation and time if we could store the results we calculated. In this figure, for instance, we are calling the function with the same strings "ABC" and "ACF" in two separate branches. This procedure, shows us that we need DP and also gives us some ideas on how to implement it.
+
+The memoization method is exactly the recursive function, except we store the numbers in `dp[]` before returning them, and check for answers in `dp[]` before calculating them. Knowing this, it's much easier to come up with the DP secret for the tabulation method: <br> `if(text1[i-1]==text2[j-1]) dp[i][j] = 1 + dp[i-1][j-1]` <br> `else dp[i][j] = max(dp[i-1][j], dp[i][j-1])`
+
+
+
+##
+
+### 20. LeetCode: Word Break [[Link]](https://leetcode.com/problems/word-break/ "LeetCode Submission Link") <a name="wordbreak"></a>
+
+#### Description
+
+Given a string `s` and a dictionary of strings `wordDict`, return `true` if `s` can be segmented into a space-separated sequence of one or more dictionary words. <br>
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+
+
+Example 1: <br>
+Input: `s = "leetcode"`, `wordDict = ["leet","code"]` <br>
+Output: `true` <br>
+Explanation: Return true because "leetcode" can be segmented as "leet code". <br>
+Example 2: <br>
+Input: `s = "applepenapple"`, `wordDict = ["apple","pen"]` <br>
+Output: `true` <br>
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple". <br>
+Note that you are allowed to reuse a dictionary word. <br>
+Example 3: <br>
+Input: `s = "catsandog"`, `wordDict = ["cats","dog","sand","and","cat"]` <br>
+Output: `false` <br>
+ 
+
+
+Constraints: <br>
+1 $\le$ `s.length` $\le$ 300 <br>
+1 $\le$ `wordDict.length` $\le$ 1000 <br>
+1 $\le$ `wordDict[i].length` $\le$ 20 <br>
+`s` and `wordDict[i]` consist of only lowercase English letters. <br>
+All the strings of wordDict are unique. <br>
+
+
+####
+
+#### Editorial
+
