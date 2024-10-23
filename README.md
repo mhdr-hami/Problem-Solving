@@ -39,6 +39,7 @@ I hope that you find this repository helpful :white_check_mark:.
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, SFR, Last Actions </details>
 20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
+21. [LeetCode: Combination Sum IV](#combinationsumiv) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 
 ***
 
@@ -815,6 +816,51 @@ A short recap on DP ideas:
 In the Word Break problem, we need to return true if the string \( s \) can be segmented into a space-separated sequence of one or more dictionary words. It occurs to me to create a `dp[]` array that stores boolean values and to return the element that represents the answer. Next, we consider what we have from the problem description: a dictionary and a string. Which one should be the Target? The string! Why? Because it is more dynamic—it can change and is the focus of the problem. We want to create this item using the dictionary we have. We'll learn more about finding the Target later. 
 
 Now that we know `s` is the target, we create the `dp[]` array. We want `dp[]` to be the size of `s`, and `dp[i]` should be `true` if the substring from `i` to the end of `s` can be made from the words in the dictionary (we choose `i` to `end`). The next step is to find how we can set the value of `dp[i]`. For each substring from `i` to `end`, we can set `dp[i]` to `true` as soon as we find a `j` such that the substring from `i` to `j` is in the dictionary and `dp[j]` is `true` (we have already made sure we can make the substring from `j` to `end` using the dictionary).
+
+
+##
+
+### 21. LeetCode: Combination Sum IV [[Link]](https://leetcode.com/problems/combination-sum-iv/ "LeetCode Submission Link") <a name="combinationsumiv"></a>
+
+#### Description
+
+Given an array of distinct integers `nums` and a target integer `target`, return the number of possible combinations that add up to target. <br>
+The test cases are generated so that the answer can fit in a 32-bit integer.
+
+
+Example 1: <br>
+Input: `nums = [1,2,3]`, `target = 4` <br>
+Output: `7` <br>
+Explanation: <br>
+The possible combination ways are: <br>
+(1, 1, 1, 1) <br>
+(1, 1, 2) <br>
+(1, 2, 1) <br>
+(1, 3) <br>
+(2, 1, 1) <br>
+(2, 2) <br>
+(3, 1) <br>
+Note that different sequences are counted as different combinations. <br>
+Example 2: <br>
+Input: `nums = [9]`, `target = 3` <br>
+Output: `0` <br>
+ 
+
+Constraints: <br>
+1 $\le$ `nums.length` $\le$ 200 <br>
+1 $\le$ `nums[i]` $\le$ 1000 <br>
+All the elements of nums are unique. <br>
+1 $\le$ `target` $\le$ 1000 <br>
+
+
+####
+
+#### Editorial
+
+Counting the number of ways to create something—similar to the climbing stairs problem—suggests using dynamic programming. Here, the "target" is literally the target amount we want to build, as it is more dynamic and central to the problem. So, we create a `dp[]` array such that `dp[i]` is the number of ways we can create the amount `i` using the given coins. All that remains is finding the DP secret. To uncover it, it's helpful to examine smaller amounts and see how their values can help compute `dp[i]`. Consider one of the coins `c`: if `k` is the number of ways we can create the amount `i - c`, then by adding `c` to all those ways, we have `k` ways to create the amount `i`. Hence, for each amount `i`, we can loop through our coins `c` and sum up all the ways we can create the amount `i - c`, and the answer would be `dp[target]`.
+
+Here is our dp secret: <br>
+for(coin `c` in coins) `dp[i] += dp[i-c]`
 
 
 ##
