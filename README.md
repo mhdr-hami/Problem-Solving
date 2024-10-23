@@ -38,7 +38,7 @@ I hope that you find this repository helpful :white_check_mark:.
 17. [LeetCode: Coin Change](#coinchange) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Last Actions </details>
 18. [LeetCode: Longest Increasing Subsequence](#longestincreasingsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, MaxSubarray </details>
 19. [LeetCode: Longest Common Subsequence](#longestcommonsubsequence) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, SFR, Last Actions </details>
-20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP </details>
+20. [LeetCode: Word Break](#wordbreak) :small_orange_diamond: <details> <summary>:dart:idea</summary> DP, Target </details>
 
 ***
 
@@ -802,3 +802,19 @@ All the strings of wordDict are unique. <br>
 
 #### Editorial
 
+A short recap on DP ideas:
+
+>>> By now, it might be easier for you to identify if a problem involves dynamic programming. First, it's similar to the previous question we solved, where we dealt with two groups of strings and their common substrings. Second, dynamic programming problems often involve optimizing something—like finding the minimum, maximum, shortest, longest, or fewest—or counting the number of ways to do something. Any of these are clues you can use to recognize that it is a dynamic programming problem. 
+
+>>> We've learned different tricks in solving dynamic programming problems and the importance of finding the DP secret. Sometimes this secret comes to mind easily, and other times we must use other methods. One such method is the SFR (start from recursive) trick. Using this trick, we first solve the problem using a recursive function, which is usually easier but not efficient, then we change it to memoization (recursive plus `dp[]`), and next, if necessary, change it to tabulation to find the DP secret.
+
+>>> We want to introduce a new trick: to create the `dp[]`, we must find something we call the "\(Target\)". The Target is the idea behind how we define the `dp[]`. Identifying the Target helps us understand how to define the `dp[]` and, consequently, how to find the DP secret. In the following problems, we will talk more about the Target.
+
+-------
+
+In the Word Break problem, we need to return true if the string \( s \) can be segmented into a space-separated sequence of one or more dictionary words. It occurs to me to create a `dp[]` array that stores boolean values and to return the element that represents the answer. Next, we consider what we have from the problem description: a dictionary and a string. Which one should be the Target? The string! Why? Because it is more dynamic—it can change and is the focus of the problem. We want to create this item using the dictionary we have. We'll learn more about finding the Target later. 
+
+Now that we know `s` is the target, we create the `dp[]` array. We want `dp[]` to be the size of `s`, and `dp[i]` should be `true` if the substring from `i` to the end of `s` can be made from the words in the dictionary (we choose `i` to `end`). The next step is to find how we can set the value of `dp[i]`. For each substring from `i` to `end`, we can set `dp[i]` to `true` as soon as we find a `j` such that the substring from `i` to `j` is in the dictionary and `dp[j]` is `true` (we have already made sure we can make the substring from `j` to `end` using the dictionary).
+
+
+##
