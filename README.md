@@ -81,7 +81,7 @@ Following the `brute force` idea, it would be great if we didn't have to walk th
 
 Sorting an array of elements seems to be difficult if you also need to keep track of their indexes, but there is a simple solution to this problem. If you require both sorting and index tracking, you can pair each element with its index and then sort the resultant array of pairs. 
 
-Although we need only $O(n)$ to traverse through the sorted array of pairs using Two Pointer, sorting the array itself requires a $O(n \  \ n)$. Still, this is good enough to get the `Accepted`.
+Although we need only $O(n)$ to traverse through the sorted array of pairs using Two Pointer, sorting the array itself requires a $O(n \  log \ n)$. Still, this is good enough to get the `Accepted`.
 
 ##
 
